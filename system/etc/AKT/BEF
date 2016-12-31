@@ -6,7 +6,7 @@
 #TWEAKS_BEGIN
 echo ""
 echo --------------------------------------------
-echo Applying 'Burnout PR2 Golden'
+echo Applying 'Burnout PR3'
 echo Transforming your phone into a Dodge Challenger Hellcat. Enjoy some donuts and the smell of burnt tires :D
 echo Advanced Kernel Settings
 echo --------------------------------------------
@@ -229,37 +229,41 @@ if [ -e "/proc/sys/kernel/sched_boost" ]; then
 fi
 echo Checking Android version...
 if grep -q 'ro.build.version.sdk=25' /system/build.prop; then
-	echo Android Nougat 7.1.X detected!
-	sleep 0.3
-	echo N detected... Applying minor adjustments
+echo Android Nougat 7.1.X detected!
+sleep 0.3
+echo N detected... Applying minor adjustments
 	echo 40000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
 	echo 40000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_rate
 	echo 40 844800:65 1324800:84 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
 	echo 55 729600:65 1324800:75 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
-        echo 87 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
+ 	echo 87 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
  	echo 99000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
-	echo 100000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
+ 	echo 100000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
  	echo 99000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay
  	echo 19000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
-	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time
+ 	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time
 	echo 4 > /proc/sys/kernel/sched_spill_nr_run
 	echo 97 > /proc/sys/kernel/sched_spill_load
 	echo 12 > /proc/sys/kernel/sched_upmigrate_min_nice
 	echo 100 > /proc/sys/kernel/sched_init_task_load
+	echo 1 > /proc/sys/kernel/sched_restrict_cluster_spill
+ 	echo 5 > /proc/sys/kernel/sched_small_wakee_task_load
+ 	echo 35 > /proc/sys/kernel/sched_big_waker_task_load
 fi
 if grep -q 'ro.build.version.sdk=24' /system/build.prop; then
-	echo Android Nougat 7.0.X detected!
-	sleep 0.3
+echo Android Nougat 7.0.X detected!
+sleep 0.3
+echo N detected... Applying minor adjustments
 	echo 40000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
 	echo 40000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_rate
 	echo 40 844800:65 1324800:84 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
 	echo 55 729600:65 1324800:75 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
-        echo 87 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
+ 	echo 87 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
  	echo 99000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
-	echo 100000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
+ 	echo 100000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
  	echo 99000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay
  	echo 19000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
-	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time
+ 	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time
 	echo 4 > /proc/sys/kernel/sched_spill_nr_run
 	echo 97 > /proc/sys/kernel/sched_spill_load
 	echo 12 > /proc/sys/kernel/sched_upmigrate_min_nice
@@ -407,8 +411,8 @@ if grep -q 'ro.build.version.sdk=23' /system/build.prop; then
 fi
 sleep 1
 echo ------------------------------------------------------------
-echo 'Burnout PR2 Golden' Successfully Applied!
-echo "Burnout PR2 Golden" > /data/system/current_profile
+echo 'Burnout PR3' Successfully Applied!
+echo "Burnout PR3" > /data/system/current_profile
 echo   You may now tweak them further
 echo    using EXKM or Kernel Adiutor
 echo ------------------------------------------------------------
