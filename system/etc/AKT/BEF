@@ -69,7 +69,7 @@ echo 50 844800:69 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_load
 chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
 echo 20000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
 echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
-echo 70 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
+echo 75 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
 echo 40000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time
 echo 79000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
 echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/ignore_hispeed_on_notif
@@ -234,8 +234,14 @@ if grep -q 'ro.build.version.sdk=25' /system/build.prop; then
 	echo N detected... Applying minor adjustments
 	echo 40000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
 	echo 40000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_rate
-	echo 60 844800:74 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
-	echo 60 1324800:70 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
+	echo 40 844800:65 1324800:84 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
+	echo 55 729600:65 1324800:75 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
+        echo 87 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
+ 	echo 99000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
+	echo 100000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
+ 	echo 99000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay
+ 	echo 19000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
+	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time
 	echo 4 > /proc/sys/kernel/sched_spill_nr_run
 	echo 97 > /proc/sys/kernel/sched_spill_load
 	echo 12 > /proc/sys/kernel/sched_upmigrate_min_nice
@@ -244,11 +250,16 @@ fi
 if grep -q 'ro.build.version.sdk=24' /system/build.prop; then
 	echo Android Nougat 7.0.X detected!
 	sleep 0.3
-	echo N detected... Applying minor adjustments
 	echo 40000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
 	echo 40000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_rate
-	echo 60 844800:74 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
-	echo 60 1324800:70 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
+	echo 40 844800:65 1324800:84 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
+	echo 55 729600:65 1324800:75 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
+        echo 87 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
+ 	echo 99000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
+	echo 100000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
+ 	echo 99000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay
+ 	echo 19000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
+	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time
 	echo 4 > /proc/sys/kernel/sched_spill_nr_run
 	echo 97 > /proc/sys/kernel/sched_spill_load
 	echo 12 > /proc/sys/kernel/sched_upmigrate_min_nice
