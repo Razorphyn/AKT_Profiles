@@ -63,7 +63,7 @@ elif test $maxfreq -eq 1728000; then
     echo 1728000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq     #Core 0 Maximum Frequency = 1728MHz         
     chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
-    echo 60 729600:70 1228800:85 1593600:95 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 
+    echo 60 729600:70 1228800:85 1728000:95 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 
     chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
     #Set normal max frequency target_loads
 else
@@ -84,7 +84,7 @@ echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/boost
 echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/fast_ramp_down
 echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/align_windows
 echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif
-echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load
+echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load
 echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration
 echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy
 if [ -e "/sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction" ]; then
@@ -207,12 +207,12 @@ echo 6 > /proc/sys/kernel/sched_spill_nr_run
 echo 100 > /proc/sys/kernel/sched_spill_load
 echo 30 > /proc/sys/kernel/sched_init_task_load
 if [ -e "/proc/sys/kernel/sched_heavy_task" ]; then
-    echo 65 > /proc/sys/kernel/sched_heavy_task
+    echo 0 > /proc/sys/kernel/sched_heavy_task
 fi
 if [ -e "/proc/sys/kernel/sched_enable_power_aware" ]; then
     echo 1 > /proc/sys/kernel/sched_enable_power_aware
 fi
-echo 10 > /proc/sys/kernel/sched_upmigrate_min_nice
+echo 5 > /proc/sys/kernel/sched_upmigrate_min_nice
 echo 4 > /proc/sys/kernel/sched_ravg_hist_size
 if [ -e "/proc/sys/kernel/sched_small_wakee_task_load" ]; then
 	echo 5 > /proc/sys/kernel/sched_small_wakee_task_load
