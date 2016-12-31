@@ -10,7 +10,7 @@ echo $divider
 echo -e "\e[01;36m   - All-in-One Project - \e[00;37m"
 echo -e "\e[01;36m - Advanced·Kernel·Tweaks - \e[00;37m"
 echo -e "\e[01;36m          - A·K·T -   \e[00;37m"
-echo -e "\e[01;36m        ~ BETA 0.9.7 ~   \e[00;37m"
+echo -e "\e[01;36m        ~ STABLE 1.0 ~   \e[00;37m"
 echo $divider
 sleep 1
 echo ""
@@ -201,8 +201,8 @@ echo -e "\e[01;92m DOWN  More Battery / Less Performance \e[00;37m"
 echo ""
 sleep 3
 echo -e "\e[02;91m 1.) GhostPepper by @Asiier \e[00;37m"
-echo -e "\e[01;31m 2.) Fusion Balanced by @Senthil360  \e[00;37m"
-echo -e "\e[02;33m 3.) Nameless Balanced by @Asiier \e[00;37m"
+echo -e "\e[01;31m 2.) Fusion Balanced by @Patalao \e[00;37m"
+echo -e "\e[02;33m 3.) Nameless Balanced by @Senthil360 \e[00;37m"
 echo -e "\e[01;93m 4.) HawkPepper by @Asiier \e[00;37m"
 echo -e "\e[01;92m 5.) Project by Zhana by @Asiier \e[00;37m"
 echo -e "\e[01;90m 6.) Additional tweaks... \e[00;37m"
