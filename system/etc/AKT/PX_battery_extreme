@@ -211,7 +211,7 @@ echo Tweaking HMP Scheduler for correcting BIG Cluster utilization
 echo 2 > /proc/sys/kernel/sched_window_stats_policy
 echo 91 > /proc/sys/kernel/sched_upmigrate
 echo 80 > /proc/sys/kernel/sched_downmigrate
-echo 5 > /proc/sys/kernel/sched_spill_nr_run
+echo 7 > /proc/sys/kernel/sched_spill_nr_run
 echo 96 > /proc/sys/kernel/sched_spill_load
 echo 40 > /proc/sys/kernel/sched_init_task_load
 if [ -e "/proc/sys/kernel/sched_heavy_task" ]; then
@@ -232,7 +232,7 @@ if [ -e "/proc/sys/kernel/sched_small_task" ]; then
 	echo 15 > /proc/sys/kernel/sched_small_task
 fi
 if [ -e "/proc/sys/kernel/sched_big_waker_task_load" ]; then
-	echo 35 > /proc/sys/kernel/sched_big_waker_task_load
+	echo 55 > /proc/sys/kernel/sched_big_waker_task_load
 fi
 echo 950000 > /proc/sys/kernel/sched_rt_runtime_us
 echo 1000000 > /proc/sys/kernel/sched_rt_period_us
