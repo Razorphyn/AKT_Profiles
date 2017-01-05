@@ -10,7 +10,7 @@ echo $divider
 echo -e "\e[01;36m   - All-in-One Project - \e[00;37m"
 echo -e "\e[01;36m - Advanced·Kernel·Tweaks - \e[00;37m"
 echo -e "\e[01;36m          - A·K·T -   \e[00;37m"
-echo -e "\e[01;36m        ~ STABLE 1.0 ~   \e[00;37m"
+echo -e "\e[01;36m        ~ -BETA- 1.1 ~   \e[00;37m"
 echo $divider
 sleep 1
 echo ""
@@ -323,8 +323,7 @@ sleep 3
 chmod 777 /system/etc/AKT/Stock
 clear
 sh /system/etc/AKT/Stock
-clear;
-exit
+clear;;
  }
 function main_menu
 {
