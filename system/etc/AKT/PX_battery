@@ -4,13 +4,13 @@
 #Device: One Plus 3
 #Codename: Project X.A.N.A (BT)
 #Build Status: Stable
-#Version: 4.0
-#Last Updated: 01/01/2017
+#Version: 4.1
+#Last Updated: 04/01/2017
 #Notes: Please give credit when using this in your work!
 #TWEAKS_BEGIN
 echo ""
 echo --------------------------------------------------------
-echo Applying 'Project X.A.N.A (Battery variant)' v4.0
+echo Applying 'Project X.A.N.A (Battery variant)' v4.1
 echo Advanced Kernel Settings
 echo --------------------------------------------------------
 sleep 0.5
@@ -19,7 +19,7 @@ echo Settings By: Asiier
 echo Device: One Plus 3
 echo Codename: 'Project X.A.N.A (BT)'
 echo Build Status: Stable
-echo Last Updated: 01/01/2017
+echo Last Updated: 04/01/2017
 echo For more information go to the XDA theard
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sleep 0.3
@@ -203,18 +203,18 @@ echo N > /sys/module/msm_thermal/parameters/enabled
 sleep 0.3
 echo Tweaking HMP Scheduler for correcting BIG Cluster utilization
 echo 2 > /proc/sys/kernel/sched_window_stats_policy
-echo 91 > /proc/sys/kernel/sched_upmigrate
-echo 80 > /proc/sys/kernel/sched_downmigrate
+echo 93 > /proc/sys/kernel/sched_upmigrate
+echo 73 > /proc/sys/kernel/sched_downmigrate
 echo 7 > /proc/sys/kernel/sched_spill_nr_run
 echo 96 > /proc/sys/kernel/sched_spill_load
-echo 40 > /proc/sys/kernel/sched_init_task_load
+echo 30 > /proc/sys/kernel/sched_init_task_load
 if [ -e "/proc/sys/kernel/sched_heavy_task" ]; then
     echo 96 > /proc/sys/kernel/sched_heavy_task
 fi
 if [ -e "/proc/sys/kernel/sched_enable_power_aware" ]; then
     echo 1 > /proc/sys/kernel/sched_enable_power_aware
 fi
-echo 19 > /proc/sys/kernel/sched_upmigrate_min_nice
+echo 5 > /proc/sys/kernel/sched_upmigrate_min_nice
 echo 4 > /proc/sys/kernel/sched_ravg_hist_size
 if [ -e "/proc/sys/kernel/sched_small_wakee_task_load" ]; then
 	echo 15 > /proc/sys/kernel/sched_small_wakee_task_load
@@ -388,7 +388,7 @@ if grep -q 'ro.build.version.sdk=23' /system/build.prop; then
 fi
 sleep 1
 echo ------------------------------------------------------------
-echo 'Project X.A.N.A v4.0' Successfully Applied!
+echo 'Project X.A.N.A v4.1' Successfully Applied!
 echo "Project X.A.N.A Battery" > /data/system/current_profile
 echo   You may now tweak them further
 echo    using EXKM or Kernel Adiutor
