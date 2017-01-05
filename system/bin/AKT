@@ -326,7 +326,7 @@ function Disable
 echo ""
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
-cat /system/etc/AKT/DisableInitd > /system/ect/init.d/99AKT
+cat /system/etc/AKT/DisableInitd > /system/etc/init.d/99AKT
 chmod 644 /system/etc/init.d/99AKT
 echo -e "\e[01;31m Permission resetted... \e[00;37m"
 echo -e "\e[01;31m File overwritten ... \e[00;37m"
@@ -337,7 +337,7 @@ sleep 3
 chmod 777 /system/etc/AKT/Stock
 clear
 sh /system/etc/AKT/Stock
-clear;;
+clear;
  }
 function main_menu
 {
