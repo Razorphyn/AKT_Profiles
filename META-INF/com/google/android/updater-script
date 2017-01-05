@@ -33,6 +33,7 @@ set_perm(0, 0, 0777, "/system/etc/AKT/NLB_balanced");
 set_perm(0, 0, 0777, "/system/etc/AKT/NLB_performance");
 set_perm(0, 0, 0777, "/system/etc/AKT/NLB_battery");
 set_perm(0, 0, 0777, "/system/etc/AKT/BEF");
+set_perm(0, 0, 0777, "/system/etc/AKT/BPN");
 set_perm(0, 0, 0777, "/system/etc/AKT/GhostPepper");
 set_perm(0, 0, 0777, "/system/etc/AKT/FairPark");
 set_perm(0, 0, 0777, "/system/etc/AKT/HawkPepper");
