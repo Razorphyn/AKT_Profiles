@@ -3,9 +3,9 @@
 #Settings By: Asiier
 #Device: One Plus 3
 #Codename: Project X.A.N.A (BT)
-#Build Status: Stable
+#Build Status: BETA
 #Version: 4.1
-#Last Updated: 04/01/2017
+#Last Updated: 05/01/2017
 #Notes: Please give credit when using this in your work!
 #TWEAKS_BEGIN
 echo ""
@@ -18,8 +18,8 @@ echo Author: Asiier
 echo Settings By: Asiier
 echo Device: One Plus 3
 echo Codename: 'Project X.A.N.A (BT)'
-echo Build Status: Stable
-echo Last Updated: 04/01/2017
+echo Build Status: BETA
+echo Last Updated: 05/01/2017
 echo For more information go to the XDA theard
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sleep 0.3
