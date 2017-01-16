@@ -218,9 +218,10 @@ echo -e "\e[02;91m 1.) GhostPepper by @Asiier \e[00;37m"
 echo -e "\e[01;31m 2.) Fusion Balanced V2 by @Patalao \e[00;37m"
 echo -e "\e[02;33m 3.) Nameless Balanced by @Senthil360 \e[00;37m"
 echo -e "\e[01;93m 4.) HawkPepper by @Asiier \e[00;37m"
-echo -e "\e[01;92m 5.) Project by Zhana by @Asiier \e[00;37m"
-echo -e "\e[01;90m 6.) Additional tweaks... \e[00;37m"
-echo -e "\e[01;94m 7.) Main menu \e[00;37m"
+echo -e "\e[01;92m 5.) Project by Zhana Balanced by @Asiier \e[00;37m"
+echo -e "\e[01;92m 6.) Project by X.A.N.A Balanced by @Asiier \e[00;37m"
+echo -e "\e[01;90m 7.) Additional tweaks... \e[00;37m"
+echo -e "\e[01;94m 8.) Main menu \e[00;37m"
 echo ""
 echo $divider
 echo ""
@@ -293,11 +294,24 @@ echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 5; main_menu;
 exit;;
-6 ) echo "Coming soon"
+6 ) #Project XANA Balanced
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+cat /system/etc/AKT/PZ_balanced > /system/etc/init.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+chmod 777 /system/etc/AKT/PX_balanced
+clear
+sh /system/etc/AKT/PX_balanced
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu;
+exit;;
+7 ) echo "Coming soon"
 echo " You tell me what to add here"
 sleep 2; main_menu;
 exit;;
-7 ) clear; main_menu;;
+8 ) clear; main_menu;;
 * ) echo " Please, enter a valid option..."
 sleep 2
 clear;;
