@@ -4,13 +4,13 @@
 #Device: One Plus 3
 #Codename: Project X.A.N.A (B)
 #Build Status: BETA
-#Version: 4.1
-#Last Updated: 04/01/2017
+#Version: 4.2
+#Last Updated: 16/01/2017
 #Notes: Please give credit when using this in your work!
 #TWEAKS_BEGIN
 echo ""
 echo --------------------------------------------------------
-echo Applying 'Project X.A.N.A (Balanced variant)' v4.1
+echo Applying 'Project X.A.N.A (Balanced variant)' v4.2
 echo Advanced Kernel Settings
 echo --------------------------------------------------------
 sleep 0.5
@@ -19,7 +19,7 @@ echo Settings By: Asiier
 echo Device: One Plus 3
 echo Codename: 'Project X.A.N.A (B)'
 echo Build Status: BETA
-echo Last Updated: 05/01/2017
+echo Last Updated: 16/01/2017
 echo For more information go to the XDA theard
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sleep 0.3
@@ -388,7 +388,7 @@ if grep -q 'ro.build.version.sdk=23' /system/build.prop; then
 fi
 sleep 1
 echo ------------------------------------------------------------
-echo 'Project X.A.N.A v4.1' Successfully Applied!
+echo 'Project X.A.N.A v4.2' Successfully Applied!
 echo "Project X.A.N.A Balanced" > /data/system/current_profile
 echo   You may now tweak them further
 echo    using EXKM or Kernel Adiutor
