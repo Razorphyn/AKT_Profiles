@@ -4,13 +4,13 @@
 #Device: One Plus 3
 #Codename: Project Zhana (BT)
 #Build Status: BETA
-#Version: 4.0
-#Last Updated: 01/01/2017
+#Version: 4.2
+#Last Updated: 22/01/2017
 #Notes: Please give credit when using this in your work!
 #TWEAKS_BEGIN
 echo ""
 echo --------------------------------------------------------
-echo Applying 'Project Zhana (Battery variant)' v4.0
+echo Applying 'Project Zhana (Battery variant)' v4.2
 echo Advanced Kernel Settings
 echo --------------------------------------------------------
 sleep 0.5
@@ -18,8 +18,8 @@ echo Author: Asiier
 echo Settings By: Asiier
 echo Device: One Plus 3
 echo Codename: 'Project Zhana (BT)'
-echo Build Status: Stable
-echo Last Updated: 01/01/2017
+echo Build Status: BETA
+echo Last Updated: 22/01/2017
 echo For more information go to the XDA theard
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sleep 0.3
@@ -58,7 +58,7 @@ if test $maxfreq -eq 1593600; then
     echo 1593600 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq     #Core 0 Maximum Frequency = 1593MHz         
     chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
-    echo 70 480000:65 556800:75 729600:82 960000:86 1036800:99 1228800:100 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 
+    echo 70 480000:65 556800:75 729600:82 960000:86 1036800:99 1228800:99 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 
     chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
 elif test $maxfreq -eq 1728000; then
     #Temporarily change permissions to governor files for the Little cluster to set the maximum frequency to 1728MHz
@@ -68,7 +68,7 @@ elif test $maxfreq -eq 1728000; then
     echo 1728000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq     #Core 0 Maximum Frequency = 1728MHz         
     chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
-    echo 70 480000:65 556800:75 729600:82 960000:86 1036800:99 1228800:100 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 
+    echo 70 480000:65 556800:75 729600:82 960000:86 1036800:99 1228800:99 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 
     chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
 else
     echo "===================================================="
@@ -79,7 +79,7 @@ chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/*
 echo 220000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack
 echo 307200 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq
 echo 100000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
-echo 0 729600:76000 960000:99000 1228800:120000 1478400:100000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
+echo 0 729600:76000 960000:99000 1228800:150000 1478400:170000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
 echo 155 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
 echo 22000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time
 echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
@@ -113,7 +113,7 @@ if test $maxfreq -eq 2150400; then
     echo 2150400 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq     #Core 2 Maximum Frequency = 2150MHz         
     chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
     chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
-    echo 65 940800:80 1036800:99 1401600:95 1824000:98 2150400:100 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
+    echo 65 940800:80 1036800:99 1401600:95 1824000:99 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
 chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
 #Set overclock max frequency compatible target_loads
 elif test $maxfreq -eq 2265600; then
@@ -124,7 +124,7 @@ elif test $maxfreq -eq 2265600; then
     echo 2265600 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq     #Core 2 Maximum Frequency = 2265MHz         
     chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
     chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
-    echo 65 940800:80 1036800:99 1401600:95 1824000:98 2265600:100 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
+    echo 65 940800:80 1036800:99 1401600:95 1824000:99 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
     chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
 else
     echo "===================================================="
@@ -388,7 +388,7 @@ if grep -q 'ro.build.version.sdk=23' /system/build.prop; then
 fi
 sleep 1
 echo ------------------------------------------------------------
-echo 'Project Zhana v4.0' Successfully Applied!
+echo 'Project Zhana v4.2' Successfully Applied!
 echo "Project Zhana Battery" > /data/system/current_profile
 echo   You may now tweak them further
 echo    using EXKM or Kernel Adiutor
