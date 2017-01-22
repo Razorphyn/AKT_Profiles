@@ -156,12 +156,12 @@ if [ -e "/sys/devices/system/cpu/cpu2/cpufreq/interactive/enable_prediction" ]; 
 fi
 sleep 0.2
 echo "=========================================="
-#Checking whether you are using a CM based ROM or not
+#Checking whether you are using a Lineage based ROM or not
 echo Checking ROM...
 sleep 0.2
 if grep -q 'ro.build.flavor=linage_oneplus3-userdebug' /system/build.prop; then
 #Enable Input Boost for LITTLE cluster @556MHz and for BIG cluster @0MHz for 66ms
-echo CM Based ROM detected
+echo Lineage Based ROM detected
 echo Applying appropriate values.
 echo Enabling Input Boost at 556 MHz for the LITTLE cluster and at 0 MHz for the BIG Cluster
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_freq
@@ -172,7 +172,7 @@ chmod 644 /sys/module/cpu_boost/parameters/input_boost_ms
 echo 66 > /sys/module/cpu_boost/parameters/input_boost_ms
 else
 #Enable Input Boost for LITTLE cluster @729MHz and for BIG cluster @0Hz for 100ms
-echo Non-CM ROM detected
+echo Non-Lineage ROM detected
 echo Applying appropriate values.
 echo Enabling Input Boost at 729 MHz for the LITTLE cluster and at 0 MHz for the BIG Cluster
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_freq
@@ -272,7 +272,7 @@ if [ "$Zen_Available" == "true" ]; then
     echo 300 > $DM_PATH/iosched/sync_expire
 fi
 if [ "$Zen_Available" = "false" ]; then
-    if grep -q 'ro.build.flavor=cm_oneplus3-userdebug' /system/build.prop; then
+    if grep -q 'ro.build.flavor=lineage_oneplus3-userdebug' /system/build.prop; then
         echo ZEN not avalible, setting 'Noop' instead...	
         if [ -e $DM_PATH/scheduler_hard ]; then
            echo noop > $DM_PATH/scheduler_hard
