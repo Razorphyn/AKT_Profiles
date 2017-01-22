@@ -159,7 +159,7 @@ echo "=========================================="
 #Checking whether you are using a Lineage based ROM or not
 echo Checking ROM...
 sleep 0.2
-if grep -q 'ro.build.flavor=linage_oneplus3-userdebug' /system/build.prop; then
+if grep -q 'ro.build.flavor=lineage_oneplus3-userdebug' /system/build.prop; then
 #Enable Input Boost for LITTLE cluster @556MHz and for BIG cluster @0MHz for 66ms
 echo Lineage Based ROM detected
 echo Applying appropriate values.
@@ -360,27 +360,27 @@ sleep 0.4
 echo GPU Underclocking
 echo msm-adreno-tz > /sys/devices/soc/b00000.qcom,kgsl-3d0/devfreq/b00000.qcom,kgsl-3d0/governor
 if grep -q 'ro.build.version.sdk=25' /system/build.prop; then
-	if grep -q 'ro.build.flavor=linage_oneplus3-userdebug' /system/build.prop; then
+	if grep -q 'ro.build.flavor=lineage_oneplus3-userdebug' /system/build.prop; then
    		echo 510000000 > /sys/class/kgsl/kgsl-3d0/max_gpuclk
 	else
     		echo 510000000 > /sys/class/kgsl/kgsl-3d0/max_gpuclk
 	fi
 fi
 if grep -q 'ro.build.version.sdk=24' /system/build.prop; then
-	if grep -q 'ro.build.flavor=linage_oneplus3-userdebug' /system/build.prop; then
+	if grep -q 'ro.build.flavor=lineage_oneplus3-userdebug' /system/build.prop; then
    		echo 510000000 > /sys/class/kgsl/kgsl-3d0/max_gpuclk
 	else
     		echo 510000000 > /sys/class/kgsl/kgsl-3d0/max_gpuclk
 	fi
 fi
 if grep -q 'ro.build.version.sdk=23' /system/build.prop; then
-	if grep -q 'ro.build.flavor=linage_oneplus3-userdebug' /system/build.prop; then
+	if grep -q 'ro.build.flavor=lineage_oneplus3-userdebug' /system/build.prop; then
    		echo 510000000 > /sys/devices/soc/b00000.qcom,kgsl-3d0/devfreq/b00000.qcom,kgsl-3d0/max_freq
 	else
     		echo 510000000 > /sys/devices/soc/b00000.qcom,kgsl-3d0/devfreq/b00000.qcom,kgsl-3d0/max_freq
 	fi
 	else
-	if grep -q 'ro.build.flavor=linage_oneplus3-userdebug' /system/build.prop; then
+	if grep -q 'ro.build.flavor=lineage_oneplus3-userdebug' /system/build.prop; then
    		echo 510000000 > /sys/devices/soc/b00000.qcom,kgsl-3d0/devfreq/b00000.qcom,kgsl-3d0/max_freq
 	else
     		echo 510000000 > /sys/devices/soc/b00000.qcom,kgsl-3d0/devfreq/b00000.qcom,kgsl-3d0/max_freq
