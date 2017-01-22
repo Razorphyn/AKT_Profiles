@@ -145,14 +145,14 @@ if [ -e "/sys/devices/system/cpu/cpu2/cpufreq/interactive/enable_prediction" ]; 
 fi
 sleep 0.2
 echo "=========================================="
-#Checking whether you are using a CM based ROM or not
+echo Checking whether you are using a Lineage based ROM or not
 echo "=========================================="
-#Checking whether you are using a CM based ROM or not
+#Checking whether you are using a Lineage based ROM or not
 echo Checking ROM...
 sleep 0.2
-if grep -q 'ro.build.flavor=cm_oneplus3-userdebug' /system/build.prop; then
+if grep -q 'ro.build.flavor=lineage_oneplus3-userdebug' /system/build.prop; then
 #Enable Input Boost for LITTLE cluster and for BIG cluster
-echo CM Based ROM detected
+echo Lineage Based ROM detected
 echo Applying appropriate values.
 echo Disabling Input Boost for the LITTLE cluster and for the BIG Cluster
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_freq
@@ -163,7 +163,7 @@ chmod 644 /sys/module/cpu_boost/parameters/input_boost_ms
 echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
 else
 #Enable Input Boost for LITTLE cluster and for BIG cluster
-echo Non-CM ROM detected
+echo Non-Lineage ROM detected
 echo Applying appropriate values.
 echo Disabling Input Boost for the LITTLE cluster and for the BIG Cluster
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_freq
@@ -255,7 +255,7 @@ if [ "$Cfq_Available" == "true" ]; then
     echo cfq > $DM_PATH/scheduler
 fi
 if [ "$Cfq_Available" = "false" ]; then
-    if grep -q 'ro.build.flavor=cm_oneplus3-userdebug' /system/build.prop; then
+    if grep -q 'ro.build.flavor=lineage_oneplus3-userdebug' /system/build.prop; then
         echo CFQ not avalible, setting 'Noop' instead...	
         if [ -e $DM_PATH/scheduler_hard ]; then
            echo noop > $DM_PATH/scheduler_hard
@@ -334,27 +334,27 @@ sleep 0.4
 echo GPU Underclocking
 echo msm-adreno-tz > /sys/devices/soc/b00000.qcom,kgsl-3d0/devfreq/b00000.qcom,kgsl-3d0/governor
 if grep -q 'ro.build.version.sdk=25' /system/build.prop; then
-	if grep -q 'ro.build.flavor=cm_oneplus3-userdebug' /system/build.prop; then
+	if grep -q 'ro.build.flavor=lineage_oneplus3-userdebug' /system/build.prop; then
    		echo 624000000 > /sys/class/kgsl/kgsl-3d0/max_gpuclk
 	else
     		echo 624000000 > /sys/class/kgsl/kgsl-3d0/max_gpuclk
 	fi
 fi
 if grep -q 'ro.build.version.sdk=24' /system/build.prop; then
-	if grep -q 'ro.build.flavor=cm_oneplus3-userdebug' /system/build.prop; then
+	if grep -q 'ro.build.flavor=lineage_oneplus3-userdebug' /system/build.prop; then
    		echo 624000000 > /sys/class/kgsl/kgsl-3d0/max_gpuclk
 	else
     		echo 624000000 > /sys/class/kgsl/kgsl-3d0/max_gpuclk
 	fi
 fi
 if grep -q 'ro.build.version.sdk=23' /system/build.prop; then
-	if grep -q 'ro.build.flavor=cm_oneplus3-userdebug' /system/build.prop; then
+	if grep -q 'ro.build.flavor=lineage_oneplus3-userdebug' /system/build.prop; then
    		echo 624000000 > /sys/devices/soc/b00000.qcom,kgsl-3d0/devfreq/b00000.qcom,kgsl-3d0/max_freq
 	else
     		echo 624000000 > /sys/devices/soc/b00000.qcom,kgsl-3d0/devfreq/b00000.qcom,kgsl-3d0/max_freq
 	fi
 	else
-	if grep -q 'ro.build.flavor=cm_oneplus3-userdebug' /system/build.prop; then
+	if grep -q 'ro.build.flavor=lineage_oneplus3-userdebug' /system/build.prop; then
    		echo 624000000 > /sys/devices/soc/b00000.qcom,kgsl-3d0/devfreq/b00000.qcom,kgsl-3d0/max_freq
 	else
     		echo 624000000 > /sys/devices/soc/b00000.qcom,kgsl-3d0/devfreq/b00000.qcom,kgsl-3d0/max_freq
