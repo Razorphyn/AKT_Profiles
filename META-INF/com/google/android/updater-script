@@ -1,7 +1,7 @@
 ui_print("============================================");
 ui_print("=                                          =");
-ui_print("=    |~Advanced * Kernel * Tweaks~|        =");
-ui_print("=           ~for One Plus 3~               =");
+ui_print("=      |~Advanced * Kernel * Tweaks~|      =");
+ui_print("=             ~for One Plus 3~             =");
 ui_print("=                                          =");
 ui_print("============================================");
 ui_print("=                                          =");
@@ -17,7 +17,7 @@ ui_print("                                            ");
 
 run_program("/sbin/busybox", "mount", "/system");
 show_progress(1, 15);
-ui_print("               Flashing!!!");
+ui_print("                 Flashing!!!");
 package_extract_dir("system", "/system");
 set_perm(0, 0, 0777, "/system/bin/AKT");
 set_perm_recursive(0, 0, 0777, 0777, "/system/etc/AKT");
@@ -46,7 +46,7 @@ ui_print(" ");
 ui_print("           Open your Terminal app");
 ui_print("               and introduce:    ");
 ui_print(" ");
-ui_print("                   - su - ");
+ui_print("                    - su - ");
 ui_print("                   - AKT - ");
 ui_print(" ");
 ui_print("     =====================================   ");
