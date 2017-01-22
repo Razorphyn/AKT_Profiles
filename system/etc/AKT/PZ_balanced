@@ -3,14 +3,14 @@
 #Settings By: Asiier
 #Device: One Plus 3
 #Codename: Project Zhana (B)
-#Build Status: Stable
-#Version: 4.0
-#Last Updated: 01/01/2017
+#Build Status: BETA
+#Version: 4.2
+#Last Updated: 22/01/2017
 #Notes: Please give credit when using this in your work!
 #TWEAKS_BEGIN
 echo ""
 echo --------------------------------------------------------
-echo Applying 'Project Zhana (Balanced variant)' v4.0
+echo Applying 'Project Zhana (Balanced variant)' v4.2
 echo Advanced Kernel Settings
 echo --------------------------------------------------------
 sleep 0.5
@@ -18,8 +18,8 @@ echo Author: Asiier
 echo Settings By: Asiier
 echo Device: One Plus 3
 echo Codename: 'Project Zhana (B)'
-echo Build Status: Stable
-echo Last Updated: 01/01/2017
+echo Build Status: BETA
+echo Last Updated: 22/01/2017
 echo For more information go to the XDA theard
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sleep 0.3
@@ -79,7 +79,7 @@ chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/*
 echo 200000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack
 echo 307200 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq
 echo 100000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
-echo 0 729600:66000 960000:82000 1228800:100000 1478400:100000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
+echo 0 729600:66000 960000:82000 1228800:120000 1478400:150000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
 echo 155 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
 echo 22000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time
 echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
@@ -389,7 +389,7 @@ if grep -q 'ro.build.version.sdk=23' /system/build.prop; then
 fi
 sleep 1
 echo ------------------------------------------------------------
-echo 'Project Zhana v4.0' Successfully Applied!
+echo 'Project Zhana v4.2' Successfully Applied!
 echo "Project Zhana Balanced" > /data/system/current_profile
 echo   You may now tweak them further
 echo    using EXKM or Kernel Adiutor
