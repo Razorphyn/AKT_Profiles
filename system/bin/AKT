@@ -10,7 +10,7 @@ echo $divider
 echo -e "\e[01;36m   - All-in-One Project - \e[00;37m"
 echo -e "\e[01;36m - Advanced·Kernel·Tweaks - \e[00;37m"
 echo -e "\e[01;36m          - A·K·T -   \e[00;37m"
-echo -e "\e[01;36m        ~ -BETA- 1.2 ~   \e[00;37m"
+echo -e "\e[01;36m        ~ Stable 1.3 ~   \e[00;37m"
 echo $divider
 sleep 1
 echo ""
@@ -98,6 +98,25 @@ echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 5; main_menu;
 exit;;
+#3 ) #Fusion Conservative
+#$BB mount -o remount,rw /system 2>/dev/null
+#mount -o remount,rw /system 2>/dev/null
+#if [ -e "/system/su.d/99AKT" ]; then
+#cat /system/etc/AKT/FusionC > /system/su.d/99AKT
+#chmod 700 /system/su.d/99AKT
+#fi
+#if [ -e "/system/etc/init.d/99AKT" ]; then
+#cat /system/etc/AKT/FusionC > /system/etc/init.d/99AKT
+#chmod 777 /system/etc/init.d/99AKT
+#fi
+#chmod 777 /system/etc/AKT/FusionP
+#clear
+#sh /system/etc/AKT/FusionC
+#clear
+#echo " Installation finished... "
+#echo " For additional information and questions, please visit our XDA thread"
+#sleep 5; main_menu;
+#exit;;
 4 ) #Project_XANA_Battery
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
@@ -192,9 +211,14 @@ exit;;
 #2 ) #Burnout PR3.5 
 #$BB mount -o remount,rw /system 2>/dev/null
 #mount -o remount,rw /system 2>/dev/null
+#if [ -e "/system/su.d/99AKT" ]; then
+#cat /system/etc/AKT/BPN > /system/su.d/99AKT
+#chmod 700 /system/su.d/99AKT
+#fi
+#if [ -e "/system/etc/init.d/99AKT" ]; then
 #cat /system/etc/AKT/BPN > /system/etc/init.d/99AKT
 #chmod 777 /system/etc/init.d/99AKT
-#chmod 777 /system/etc/AKT/BPN
+#fi
 #clear
 #sh /system/etc/AKT/BPN
 #clear
