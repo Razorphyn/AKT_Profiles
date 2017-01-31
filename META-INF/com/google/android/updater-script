@@ -31,6 +31,7 @@ set_perm(0, 0, 0777, "/system/etc/AKT/PX_battery_extreme");
 set_perm(0, 0, 0777, "/system/etc/AKT/PX_balanced");
 set_perm(0, 0, 0777, "/system/etc/AKT/FusionB");
 set_perm(0, 0, 0777, "/system/etc/AKT/FusionP");
+set_perm(0, 0, 0777, "/system/etc/AKT/FusionC");
 set_perm(0, 0, 0777, "/system/etc/AKT/NLB_balanced");
 set_perm(0, 0, 0777, "/system/etc/AKT/NLB_performance");
 set_perm(0, 0, 0777, "/system/etc/AKT/NLB_battery");
