@@ -30,10 +30,11 @@ sleep 3
 echo -e "\e[02;91m 1.) Project Zhana Battery by @Asiier \e[00;37m"
 echo -e "\e[01;31m 2.) Nameless Battery by @Senthil360  \e[00;37m"
 echo -e "\e[02;33m 3.) FairPark by @Asiier \e[00;37m"
-echo -e "\e[01;93m 4.) Project X.A.N.A Battery by @Asiier \e[00;37m"
-echo -e "\e[01;92m 5.) Project X.A.N.A Battery Extreme by @Asiier \e[00;37m"
-echo -e "\e[01;90m 6.) Additional tweaks... \e[00;37m"
-echo -e "\e[01;94m 7.) Main menu \e[00;37m"
+echo -e "\e[01;93m 4.) Fusion Conservative by @patalao \e[00;37m"
+echo -e "\e[01;93m 5.) Project X.A.N.A Battery by @Asiier \e[00;37m"
+echo -e "\e[01;92m 6.) Project X.A.N.A Battery Extreme by @Asiier \e[00;37m"
+echo -e "\e[01;90m 7.) Additional tweaks... \e[00;37m"
+echo -e "\e[01;94m 8.) Main menu \e[00;37m"
 echo ""
 echo $divider
 echo ""
@@ -98,26 +99,26 @@ echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 5; main_menu;
 exit;;
-#3 ) #Fusion Conservative
-#$BB mount -o remount,rw /system 2>/dev/null
-#mount -o remount,rw /system 2>/dev/null
-#if [ -e "/system/su.d/99AKT" ]; then
-#cat /system/etc/AKT/FusionC > /system/su.d/99AKT
-#chmod 700 /system/su.d/99AKT
-#fi
-#if [ -e "/system/etc/init.d/99AKT" ]; then
-#cat /system/etc/AKT/FusionC > /system/etc/init.d/99AKT
-#chmod 777 /system/etc/init.d/99AKT
-#fi
-#chmod 777 /system/etc/AKT/FusionP
-#clear
-#sh /system/etc/AKT/FusionC
-#clear
-#echo " Installation finished... "
-#echo " For additional information and questions, please visit our XDA thread"
-#sleep 5; main_menu;
-#exit;;
-4 ) #Project_XANA_Battery
+4 ) #Fusion Conservative
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+cat /system/etc/AKT/FusionC > /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+cat /system/etc/AKT/FusionC > /system/etc/init.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+chmod 777 /system/etc/AKT/FusionP
+clear
+sh /system/etc/AKT/FusionC
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu;
+exit;;
+5 ) #Project_XANA_Battery
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
@@ -136,7 +137,7 @@ echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 5; main_menu;
 exit;;
-5 ) #Project_XANA_Extreme
+6 ) #Project_XANA_Extreme
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
@@ -155,12 +156,12 @@ echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 5; main_menu;
 exit;;
-6 ) echo "Coming soon"
+7 ) echo "Coming soon"
 echo " You tell me what to add here"
 sleep 2;
 clear; main_menu;
 exit;;
-7 ) clear; main_menu;;
+8 ) clear; main_menu;;
 * ) clear; echo " Please, enter a valid option..."; 
 sleep 2;
 clear;;
