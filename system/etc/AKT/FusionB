@@ -146,7 +146,7 @@ elif test $maxfreq -eq 2265600; then
     echo 70 940800:75 1248000:80 1401600:90 1632000:99 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
     chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
 fi
-if test $maxfreq -lt 1593600; then
+if test $maxfreq -lt 2150400; then
     #Temporarily change permissions to governor files for the Big cluster to set the maximum frequency to 1593MHz
     echo BIG Cluster Underclocking detected!!
     sleep 1
@@ -159,13 +159,14 @@ if test $maxfreq -lt 1593600; then
     chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
     echo 70 940800:75 1248000:80 1401600:90 1632000:99 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
     chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
-elif test $maxfreq -gt 1728000; then
+elif test $maxfreq -gt 2265600; then
     #Temporarily change permissions to governor files for the Little cluster to set the maximum frequency to 1728MHz
     echo BIG Cluster Overclocking detected. 
     sleep 1
     echo This OverClock is higher than normal and only possible on Xceed Kernel
     echo The tweak will continue getting applyed
-    echo " Althought it might no reach the maximum frequency you have setted as it haven't been made to work with frecuencies higher than 1728 Mhz "
+    echo " Althought it might no reach the maximum frequency you have setted as it haven't been made to work with frecuencies higher than 2265600 Mhz "
+    sleep 4    
     #chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
     #echo 1728000 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq     #Core 0 Maximum Frequency = 1728MHz         
     #chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
