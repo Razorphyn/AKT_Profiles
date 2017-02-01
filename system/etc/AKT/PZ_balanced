@@ -121,7 +121,6 @@ if [ -e "/sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction" ]; 
 fi
 sleep 0.5
 #Set normal max frequency target_loads
-fi
 echo Applying settings to BIG Cluster
 sleep 0.2
 #Temporarily change permissions to governor files for the LITTLE cluster to enable Interactive governor
@@ -212,23 +211,39 @@ if grep -q 'ro.build.flavor=lineage_oneplus3-userdebug' /system/build.prop; then
 echo Lineage Based ROM detected
 echo Applying appropriate values.
 echo Enabling Input Boost at 556 MHz for the LITTLE cluster and at 729 MHz for the BIG Cluster
+ if [ -e "/sys/module/cpu_boost/parameters/input_boost_freq" ]; then
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_freq
 echo 0:556800 1:0 2:729600 3:0 > /sys/module/cpu_boost/parameters/input_boost_freq
-chmod 644 /sys/module/cpu_boost/parameters/boost_ms
-echo 0 > /sys/module/cpu_boost/parameters/boost_ms
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_ms
 echo 66 > /sys/module/cpu_boost/parameters/input_boost_ms
+else
+echo "*Input Boost is not avalible for your Kernel*"
+fi
+ if [ -e "/sys/module/cpu_boost/parameters/boost_ms" ]; then
+chmod 644 /sys/module/cpu_boost/parameters/boost_ms
+echo 0 > /sys/module/cpu_boost/parameters/boost_ms
+else
+echo "*Cpu_Boost is not avalible for your Kernel*"
+fi
 else
 #Enable Input Boost for LITTLE cluster @729MHz and for BIG cluster @729Hz for 100ms
 echo Non-Lineage ROM detected
 echo Applying appropriate values.
 echo Enabling Input Boost at 729 MHz for the LITTLE cluster and at 940 MHz for the BIG Cluster
+ if [ -e "/sys/module/cpu_boost/parameters/input_boost_freq" ]; then
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_freq
 echo 0:729600 1:0 2:940800 3:0 > /sys/module/cpu_boost/parameters/input_boost_freq
-chmod 644 /sys/module/cpu_boost/parameters/boost_ms
-echo 0 > /sys/module/cpu_boost/parameters/boost_ms
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_ms
 echo 100 > /sys/module/cpu_boost/parameters/input_boost_ms
+else
+echo "*Input Boost is not avalible for your Kernel*"
+fi
+ if [ -e "/sys/module/cpu_boost/parameters/boost_ms" ]; then
+chmod 644 /sys/module/cpu_boost/parameters/boost_ms
+echo 0 > /sys/module/cpu_boost/parameters/boost_ms
+else
+echo "*Cpu_Boost is not avalible for your Kernel*"
+fi
 fi
 sleep 0.3
 echo "=========================================="
