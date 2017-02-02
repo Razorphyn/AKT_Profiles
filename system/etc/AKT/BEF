@@ -189,7 +189,7 @@ if [ -e "/sys/devices/system/cpu/cpu2/cpufreq/interactive/enable_prediction" ]; 
 fi
 sleep 0.2
 echo "=========================================="
-#Checking whether you are using a Sultanxda based ROM or not
+echo Checking whether you are using a Sultanxda based ROM or not
 echo "=========================================="
 #Checking whether you are using a Sultanxda based ROM or not
 echo Checking ROM...
@@ -205,8 +205,12 @@ else
     echo Disabling normal Input Boost for the LITTLE cluster and for the BIG Cluster
     chmod 644 /sys/module/cpu_boost/parameters/input_boost_freq
     echo 0:0 1:0 2:0 3:0 > /sys/module/cpu_boost/parameters/input_boost_freq
-    chmod 644 /sys/module/cpu_boost/parameters/input_boost_ms
-    echo 0 > /sys/module/cpu_boost/parameters/input_boost_ms
+   if [ -e "/sys/module/cpu_boost/parameters/boost_ms" ]; then
+    chmod 644 /sys/module/cpu_boost/parameters/boost_ms
+    echo 0 > /sys/module/cpu_boost/parameters/boost_ms
+   else
+    echo "*Cpu_Boost is not avalible for your Kernel*"
+   fi
 fi
 sleep 0.3
 echo "=========================================="
@@ -220,11 +224,17 @@ else
 fi
 #Disable BCL
 echo Disabling BCL and Removing Perfd
+if [ -e "/sys/devices/soc/soc:qcom,bcl/mode" ]; then
 echo -n disable > /sys/devices/soc/soc:qcom,bcl/mode
+fi
 #Enable Core Control and Disable MSM Thermal Throttling allowing for longer sustained performance
 echo Disabling Aggressive CPU Thermal Throttling
+if [ -e "/sys/module/msm_thermal/core_control/enabled" ]; then
 echo 1 > /sys/module/msm_thermal/core_control/enabled
+fi
+if [ -e "/sys/module/msm_thermal/parameters/enabled" ]; then
 echo N > /sys/module/msm_thermal/parameters/enabled
+fi
 #Tweak HMP Scheduler
 sleep 0.3
 echo Tweaking HMP Scheduler for correcting BIG Cluster utilization
