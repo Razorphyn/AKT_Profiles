@@ -209,11 +209,15 @@ echo Checking ROM...
 sleep 0.2
 echo Applying appropriate values.
 if [ -e "/sys/kernel/cpu_input_boost/enabled" ]; then
-    echo Disabling Input Boost for the LITTLE cluster and for the BIG Cluster and custom thermal driver of Sultanxda
-    chmod 644 /sys/kernel/cpu_input_boost/enabled
+    echo Enabling Input Boost for the LITTLE cluster @556 MHz and for the BIG Cluster @556Mhz and Custom thermal driver of Sultanxda
+    chmod 644 /sys/kernel/cpu_input_boost/*
     echo 1 > /sys/kernel/cpu_input_boost/enabled
+    echo 66 > /sys/kernel/cpu_input_boost/ib_duration_ms
+    echo 556800 556800 > /sys/kernel/cpu_input_boost/ib_freq
+    chmod 444 /sys/kernel/cpu_input_boost/*
     chmod 644 /sys/kernel/msm_thermal/enabled
     echo 0 > /sys/kernel/msm_thermal/enabled
+    chmod 444 /sys/kernel/msm_thermal/enabled
 else
 #Checking whether you are using a Lineage based ROM or not
 echo Checking ROM...
@@ -241,7 +245,7 @@ else
 #Enable Input Boost for LITTLE cluster @729MHz and for BIG cluster @729Hz for 100ms
 echo Non-Lineage ROM detected
 echo Applying appropriate values.
-echo Enabling Input Boost at 556 MHz for the LITTLE cluster and at 556 MHz for the BIG Cluster
+echo Enabling Input Boost at 556 MHz for the LITTLE cluster and at 729 MHz for the BIG Cluster
 if [ -e "/sys/module/cpu_boost/parameters/input_boost_freq" ]; then
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_freq
 echo 0:556800  1:729600 2:0 3:0 > /sys/module/cpu_boost/parameters/input_boost_freq
