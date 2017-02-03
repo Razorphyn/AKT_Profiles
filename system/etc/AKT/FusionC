@@ -254,6 +254,7 @@ else
 echo "*Cpu_Boost is not avalible for your Kernel*"
 fi
 fi
+fi
 sleep 0.3
 echo "=========================================="
 #Disable TouchBoost
