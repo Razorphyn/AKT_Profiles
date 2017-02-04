@@ -214,7 +214,7 @@ if [ -e "/sys/kernel/cpu_input_boost/enabled" ]; then
     chmod 644 /sys/kernel/cpu_input_boost/*
     echo 1 > /sys/kernel/cpu_input_boost/enabled
     echo 66 > /sys/kernel/cpu_input_boost/ib_duration_ms
-    echo 729600 940800 > /sys/kernel/cpu_input_boost/ib_freq
+    echo 729600 940800 > /sys/kernel/cpu_input_boost/ib_freqs
     chmod 444 /sys/kernel/cpu_input_boost/*
     chmod 644 /sys/kernel/msm_thermal/enabled
     echo 0 > /sys/kernel/msm_thermal/enabled
@@ -249,7 +249,7 @@ echo Applying appropriate values.
 echo Enabling Input Boost at 729 MHz for the LITTLE cluster and at 940 MHz for the BIG Cluster
 if [ -e "/sys/module/cpu_boost/parameters/input_boost_freq" ]; then
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_freq
-echo 0:729600 1:0 2:940800 3:0 > /sys/module/cpu_boost/parameters/input_boost_freqs
+echo 0:729600 1:0 2:940800 3:0 > /sys/module/cpu_boost/parameters/input_boost_freq
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_ms
 echo 77 > /sys/module/cpu_boost/parameters/input_boost_ms
 else
