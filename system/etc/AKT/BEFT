@@ -6,8 +6,8 @@
 #TWEAKS_BEGIN
 echo ""
 echo --------------------------------------------
-echo Applying 'Burnout PR3'
-echo Transforming your phone into a Dodge Challenger Hellcat. Enjoy some donuts and the smell of burnt tires :D
+echo Applying 'Burnout PR4' profile
+echo " Brace Yourselves. It's time for some power! "
 echo Advanced Kernel Settings
 echo --------------------------------------------
 sleep 0.5
@@ -230,7 +230,7 @@ sleep 0.3
 echo Tweaking HMP Scheduler for correcting BIG Cluster utilization
 echo 2 > /proc/sys/kernel/sched_window_stats_policy
 echo 60 > /proc/sys/kernel/sched_downmigrate
-echo 85 > /proc/sys/kernel/sched_upmigrate
+echo 80 > /proc/sys/kernel/sched_upmigrate
 echo 2 > /proc/sys/kernel/sched_spill_nr_run
 echo 90 > /proc/sys/kernel/sched_spill_load
 echo 15 > /proc/sys/kernel/sched_upmigrate_min_nice
@@ -274,50 +274,165 @@ if grep -q 'ro.build.version.sdk=25' /system/build.prop; then
 echo Android Nougat 7.1.X detected!
 sleep 0.3
 echo N detected... Applying minor adjustments
-	echo 40000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
-	echo 40000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_rate
+	echo -1 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack
 	chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
-	chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
-	echo 40 844800:65 1324800:84 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
-	echo 55 729600:65 1324800:75 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
- 	echo 87 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
- 	echo 99000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
- 	echo 100000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
- 	echo 99000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay
- 	echo 19000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
- 	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time
-	echo 4 > /proc/sys/kernel/sched_spill_nr_run
-	echo 97 > /proc/sys/kernel/sched_spill_load
-	echo 12 > /proc/sys/kernel/sched_upmigrate_min_nice
-	echo 100 > /proc/sys/kernel/sched_init_task_load
-	echo 1 > /proc/sys/kernel/sched_restrict_cluster_spill
- 	echo 5 > /proc/sys/kernel/sched_small_wakee_task_load
- 	echo 35 > /proc/sys/kernel/sched_big_waker_task_load
+	echo 50 652800:65 960000:70 1670400:90 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
 	chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
+	echo 30000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
+	echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
+	echo 100 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
+	echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time
+	echo 10000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
+	echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/ignore_hispeed_on_notif
+	echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/boost
+	echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/fast_ramp_down
+	echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/align_windows
+	echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif
+	echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load
+	echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration
+	echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy
+	if [ -e "/sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction" ]; then
+    	chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction
+    	echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction
+	fi
+	chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/*
+	echo 80000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_slack
+	chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
+	echo 65 729600:70 1324800:75 1824000:77 2150400:80 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
 	chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
+	echo 20000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_rate
+	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay
+	echo 100 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/go_hispeed_load
+	echo 60000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time
+	echo 10000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/max_freq_hysteresis
+	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/ignore_hispeed_on_notif
+	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/boost
+	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/fast_ramp_down
+	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/align_windows
+	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/use_migration_notif
+	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/use_sched_load
+	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/boostpulse_duration
+	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/io_is_busy
+	if [ -e "/sys/devices/system/cpu/cpu2/cpufreq/interactive/enable_prediction" ]; then
+	 chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/enable_prediction
+     	 echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/enable_prediction
+	fi
+	echo 2 > /proc/sys/kernel/sched_window_stats_policy
+	echo 40 > /proc/sys/kernel/sched_downmigrate
+	echo 80 > /proc/sys/kernel/sched_upmigrate
+	echo 5 > /proc/sys/kernel/sched_spill_nr_run
+	echo 75 > /proc/sys/kernel/sched_spill_load
+	echo 10 > /proc/sys/kernel/sched_upmigrate_min_nice
+	echo 950000 > /proc/sys/kernel/sched_rt_runtime_us
+	echo 1000000 > /proc/sys/kernel/sched_rt_period_us
+	echo 5 > /proc/sys/kernel/sched_ravg_hist_size
+	echo 2 > /proc/sys/kernel/sched_new_task_windows
+	echo 100 > /proc/sys/kernel/sched_init_task_load
+	echo 0 > /proc/sys/kernel/sched_restrict_cluster_spill
+	echo 9 > /proc/sys/kernel/sched_rr_timeslice_ms
+	if [ -e "/proc/sys/kernel/sched_enable_power_aware" ]; then
+	    echo 1 > /proc/sys/kernel/sched_enable_power_aware
+	fi
+	if [ -e "/proc/sys/kernel/sched_small_wakee_task_load" ]; then
+ 		echo 10 > /proc/sys/kernel/sched_small_wakee_task_load
+	fi
+	if [ -e "/proc/sys/kernel/sched_wakeup_load_threshold" ]; then
+	 echo 110 > /proc/sys/kernel/sched_wakeup_load_threshold
+	fi
+	if [ -e "/proc/sys/kernel/sched_big_waker_task_load" ]; then
+ 	 echo 25 > /proc/sys/kernel/sched_big_waker_task_load
+	fi
+	if [ -e "/proc/sys/kernel/sched_freq_dec_notify" ]; then
+	 echo 410000 > /proc/sys/kernel/sched_freq_dec_notify
+	fi
+	if [ -e "/proc/sys/kernel/sched_freq_inc_notify" ]; then
+	 echo 410000 > /proc/sys/kernel/sched_freq_inc_notify
+	fi
+	if [ -e "/proc/sys/kernel/sched_boost" ]; then
+	 echo 0 > /proc/sys/kernel/sched_boost
+	fi
 fi
 if grep -q 'ro.build.version.sdk=24' /system/build.prop; then
 echo Android Nougat 7.0.X detected!
 sleep 0.3
 echo N detected... Applying minor adjustments
-	echo 40000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
-	echo 40000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_rate
+	echo -1 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack
 	chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
-	chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
-	echo 40 844800:65 1324800:84 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
-	echo 55 729600:65 1324800:75 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
- 	echo 87 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
- 	echo 99000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
- 	echo 100000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
- 	echo 99000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay
- 	echo 19000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
- 	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time
-	echo 4 > /proc/sys/kernel/sched_spill_nr_run
-	echo 97 > /proc/sys/kernel/sched_spill_load
-	echo 12 > /proc/sys/kernel/sched_upmigrate_min_nice
-	echo 100 > /proc/sys/kernel/sched_init_task_load
+	echo 50 652800:65 960000:70 1670400:90 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
 	chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
+	echo 30000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
+	echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
+	echo 100 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
+	echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time
+	echo 10000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
+	echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/ignore_hispeed_on_notif
+	echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/boost
+	echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/fast_ramp_down
+	echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/align_windows
+	echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif
+	echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load
+	echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration
+	echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy
+	if [ -e "/sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction" ]; then
+	    chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction
+	    echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction
+	fi
+	chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/*
+	echo 80000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_slack
+	chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
+	echo 65 729600:70 1324800:75 1824000:77 2150400:80 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
 	chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
+	echo 20000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_rate
+	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay
+	echo 100 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/go_hispeed_load
+	echo 60000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time
+	echo 10000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/max_freq_hysteresis
+	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/ignore_hispeed_on_notif
+	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/boost
+	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/fast_ramp_down
+	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/align_windows
+	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/use_migration_notif
+	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/use_sched_load
+	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/boostpulse_duration
+	echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/io_is_busy
+	if [ -e "/sys/devices/system/cpu/cpu2/cpufreq/interactive/enable_prediction" ]; then
+	    chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/enable_prediction
+	    echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/enable_prediction
+	fi
+	echo 2 > /proc/sys/kernel/sched_window_stats_policy
+	echo 40 > /proc/sys/kernel/sched_downmigrate
+	echo 80 > /proc/sys/kernel/sched_upmigrate
+	echo 5 > /proc/sys/kernel/sched_spill_nr_run
+	echo 75 > /proc/sys/kernel/sched_spill_load
+	echo 10 > /proc/sys/kernel/sched_upmigrate_min_nice
+	echo 950000 > /proc/sys/kernel/sched_rt_runtime_us
+	echo 1000000 > /proc/sys/kernel/sched_rt_period_us
+	echo 5 > /proc/sys/kernel/sched_ravg_hist_size
+	echo 2 > /proc/sys/kernel/sched_new_task_windows
+	echo 100 > /proc/sys/kernel/sched_init_task_load
+	echo 0 > /proc/sys/kernel/sched_restrict_cluster_spill
+	echo 9 > /proc/sys/kernel/sched_rr_timeslice_ms
+	if [ -e "/proc/sys/kernel/sched_enable_power_aware" ]; then
+	    echo 1 > /proc/sys/kernel/sched_enable_power_aware
+	fi
+	if [ -e "/proc/sys/kernel/sched_small_wakee_task_load" ]; then
+		echo 10 > /proc/sys/kernel/sched_small_wakee_task_load
+	fi
+	if [ -e "/proc/sys/kernel/sched_wakeup_load_threshold" ]; then
+		echo 110 > /proc/sys/kernel/sched_wakeup_load_threshold
+	fi
+	if [ -e "/proc/sys/kernel/sched_big_waker_task_load" ]; then
+		echo 25 > /proc/sys/kernel/sched_big_waker_task_load
+	fi
+	if [ -e "/proc/sys/kernel/sched_freq_dec_notify" ]; then
+		echo 410000 > /proc/sys/kernel/sched_freq_dec_notify
+	fi
+	if [ -e "/proc/sys/kernel/sched_freq_inc_notify" ]; then
+		echo 410000 > /proc/sys/kernel/sched_freq_inc_notify
+	fi
+	if [ -e "/proc/sys/kernel/sched_boost" ]; then
+		echo 0 > /proc/sys/kernel/sched_boost
+	fi
 fi
 if grep -q 'ro.build.version.sdk=23' /system/build.prop; then
 	echo Android Marshmallow 6.0.1 detected!
@@ -405,10 +520,10 @@ if [ -e "$DM_PATH/rq_affinity" ]; then
 	echo 1 > $DM_PATH/rq_affinity
 fi
 if [ -e "/sys/block/dm-0/bdi/read_ahead_kb" ]; then
-	echo 3072 > /sys/devices/virtual/block/dm-0/bdi/read_ahead_kb
+	echo 512 > /sys/devices/virtual/block/dm-0/bdi/read_ahead_kb
 fi
 if [ -e "/sys/block/sda/bdi/read_ahead_kb" ]; then
-	echo 3072 > /sys/block/sda/bdi/read_ahead_kb
+	echo 512 > /sys/block/sda/bdi/read_ahead_kb
 fi
 if [ -e "/sys/module/lowmemorykiller/parameters/enable_adaptive_lmk" ]; then
 chmod 666 /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
@@ -461,8 +576,8 @@ if grep -q 'ro.build.version.sdk=23' /system/build.prop; then
 fi
 sleep 1
 echo ------------------------------------------------------------
-echo 'Burnout PR3' Successfully Applied!
-echo "Burnout PR3" > /data/system/current_profile
+echo 'Burnout PR4 Overdrive' Successfully Applied!
+echo "Burnout PR4 Overdrive" > /data/system/current_profile
 echo   You may now tweak them further
 echo    using EXKM or Kernel Adiutor
 echo ------------------------------------------------------------
