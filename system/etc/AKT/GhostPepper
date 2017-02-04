@@ -214,7 +214,7 @@ if [ -e "/sys/kernel/cpu_input_boost/enabled" ]; then
     chmod 644 /sys/kernel/cpu_input_boost/*
     echo 1 > /sys/kernel/cpu_input_boost/enabled
     echo 35 > /sys/kernel/cpu_input_boost/ib_duration_ms
-    echo 729600 940800 > /sys/kernel/cpu_input_boost/ib_freq
+    echo 729600 940800 > /sys/kernel/cpu_input_boost/ib_freqs
     chmod 444 /sys/kernel/cpu_input_boost/*
     chmod 644 /sys/kernel/msm_thermal/enabled
     echo 0 > /sys/kernel/msm_thermal/enabled
