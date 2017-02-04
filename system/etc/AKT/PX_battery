@@ -230,7 +230,7 @@ echo Applying appropriate values.
 echo Enabling Input Boost at 556 MHz for the LITTLE cluster and at 0 MHz for the BIG Cluster
 if [ -e "/sys/module/cpu_boost/parameters/input_boost_freq" ]; then
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_freq
-echo 0:556800  1:0 2:0 3:0 > /sys/module/cpu_boost/parameters/input_boost_freq
+echo 0:556800  1:0 2:0 3:0 > /sys/module/cpu_boost/parameters/input_boost_freqs
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_ms
 echo 66 > /sys/module/cpu_boost/parameters/input_boost_ms
 else
