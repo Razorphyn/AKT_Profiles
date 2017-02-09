@@ -141,7 +141,7 @@ if test $maxfreq -eq 2150400; then
     echo 2150400 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq     #Core 2 Maximum Frequency = 2150MHz         
     chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
     chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
-    echo 65 729600:75 940800:80 1036800:99 1401600:97 1824000:99 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
+    echo 65 729600:75 940800:80 1036800:99 1401600:93 1620000:98 1824000:100 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
 chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
 #Set overclock max frequency compatible target_loads
 elif test $maxfreq -eq 2265600; then
@@ -152,7 +152,7 @@ elif test $maxfreq -eq 2265600; then
     echo 2265600 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq     #Core 2 Maximum Frequency = 2265MHz         
     chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
     chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
-    echo 65 729600:75 940800:80 1036800:99 1401600:97 1824000:99 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
+    echo 65 729600:75 940800:80 1036800:99 1401600:93 1620000:98 1824000:100 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
     chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
 fi
 if test $maxfreq -lt 2150400; then
@@ -166,7 +166,7 @@ if test $maxfreq -lt 2150400; then
     #echo 1593600 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq     #Core 0 Maximum Frequency = 1593MHz         
     #chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
     chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
-    echo 65 729600:75 940800:80 1036800:99 1401600:97 1824000:99 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
+    echo 65 729600:75 940800:80 1036800:99 1401600:93 1620000:98 1824000:100 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
     chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
 elif test $maxfreq -gt 2265600; then
     #Temporarily change permissions to governor files for the Little cluster to set the maximum frequency to 1728MHz
@@ -180,7 +180,7 @@ elif test $maxfreq -gt 2265600; then
     #echo 1728000 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq     #Core 0 Maximum Frequency = 1728MHz         
     #chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
     chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
-    echo 65 729600:75 940800:80 1036800:99 1401600:97 1824000:99 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
+    echo 65 729600:75 940800:80 1036800:99 1401600:93 1620000:98 1824000:100 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
     chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
 fi
 sleep 0.5
