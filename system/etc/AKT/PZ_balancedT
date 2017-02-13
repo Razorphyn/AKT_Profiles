@@ -121,7 +121,6 @@ if [ -e "/sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction" ]; 
 fi
 sleep 0.5
 #Set normal max frequency target_loads
-fi
 echo Applying settings to BIG Cluster
 sleep 0.2
 #Temporarily change permissions to governor files for the LITTLE cluster to enable Interactive governor
@@ -130,7 +129,7 @@ echo interactive > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
 chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
 #Grab Maximum Achievable Frequency for the Big Cluster
 maxfreq=$(cat "/sys/devices/system/cpu/cpu2/cpufreq/cpuinfo_max_freq")                
-if test $maxfreq -eq 2150400; then
+if test $maxfreq -eq 2342400; then
     #Temporarily change permissions to governor files for the Big cluster to set the maximum frequency to 2150MHz
     echo No BIG Cluster Overclocking detected. 
     echo Applying appropriate values.
@@ -138,10 +137,10 @@ if test $maxfreq -eq 2150400; then
     echo 2150400 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq     #Core 2 Maximum Frequency = 2150MHz         
     chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
     chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
-    echo 65 940800:80 1036800:99 1401600:95 1824000:98 2150400:100 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
+    echo 65 902400:80 1056000:99 1440000:95 1824000:98 2342400:100 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
 chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
 #Set overclock max frequency compatible target_loads
-elif test $maxfreq -eq 2265600; then
+elif test $maxfreq -eq 2342400; then
     #Temporarily change permissions to governor files for the Big cluster to set the maximum frequency to 2265MHz
     echo BIG Cluster Overclocking detected. 
     echo Applying appropriate values.
@@ -149,10 +148,10 @@ elif test $maxfreq -eq 2265600; then
     echo 2265600 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq     #Core 2 Maximum Frequency = 2265MHz         
     chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
     chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
-    echo 65 940800:80 1036800:99 1401600:95 1824000:98 2265600:100> /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
+    echo 65 902400:80 1056000:99 1440000:95 1824000:98 2342400:100 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
     chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
 fi
-if test $maxfreq -lt 2150400; then
+if test $maxfreq -lt 2342400; then
     #Temporarily change permissions to governor files for the Big cluster to set the maximum frequency to 1593MHz
     echo BIG Cluster Underclocking detected!!
     sleep 1
@@ -163,9 +162,9 @@ if test $maxfreq -lt 2150400; then
     #echo 1593600 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq     #Core 0 Maximum Frequency = 1593MHz         
     #chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
     chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
-    echo 65 940800:80 1036800:99 1401600:95 1824000:98 2150400:100 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
+    echo 65 902400:80 1056000:99 1440000:95 1824000:98 2342400:100 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
     chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
-elif test $maxfreq -gt 2265600; then
+elif test $maxfreq -gt 2342400; then
     #Temporarily change permissions to governor files for the Little cluster to set the maximum frequency to 1728MHz
     echo BIG Cluster Overclocking detected. 
     sleep 1
@@ -177,7 +176,7 @@ elif test $maxfreq -gt 2265600; then
     #echo 1728000 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq     #Core 0 Maximum Frequency = 1728MHz         
     #chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
     chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
-    echo 65 940800:80 1036800:99 1401600:95 1824000:98 2265600:100 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
+    echo 65 902400:80 1056000:99 1440000:95 1824000:98 2342400:100 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
     chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
 fi
 sleep 0.5
@@ -186,7 +185,7 @@ chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/*
 echo 100000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_slack
 echo 1401600 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/hispeed_freq
 echo 60000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_rate
-echo 32000 940800:75000 1248000:60000 1401600:80000 1632000:80000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay
+echo 32000 902400:75000 1286400:60000 1440000:80000 1670400:80000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay
 echo 400 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/go_hispeed_load
 echo 9000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time
 echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/max_freq_hysteresis
@@ -202,8 +201,24 @@ if [ -e "/sys/devices/system/cpu/cpu2/cpufreq/interactive/enable_prediction" ]; 
     chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/enable_prediction
     echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/enable_prediction
 fi
-sleep 0.2
 echo "=========================================="
+echo Checking whether you are using a Sultanxda based ROM or not
+echo "=========================================="
+#Checking whether you are using a Sultanxda based ROM or not
+echo Checking ROM...
+sleep 0.2
+echo Applying appropriate values.
+if [ -e "/sys/kernel/cpu_input_boost/enabled" ]; then
+    echo Enabling Input Boost for the LITTLE cluster @556 MHz and for the BIG Cluster @556Mhz and Custom thermal driver of Sultanxda
+    chmod 644 /sys/kernel/cpu_input_boost/*
+    echo 1 > /sys/kernel/cpu_input_boost/enabled
+    echo 66 > /sys/kernel/cpu_input_boost/ib_duration_ms
+    echo 537600 537600 > /sys/kernel/cpu_input_boost/ib_freq
+    chmod 444 /sys/kernel/cpu_input_boost/*
+    chmod 644 /sys/kernel/msm_thermal/enabled
+    echo 0 > /sys/kernel/msm_thermal/enabled
+    chmod 444 /sys/kernel/msm_thermal/enabled
+else
 #Checking whether you are using a Lineage based ROM or not
 echo Checking ROM...
 sleep 0.2
@@ -211,24 +226,41 @@ if grep -q 'ro.build.flavor=lineage_oneplus3-userdebug' /system/build.prop; then
 #Enable Input Boost for LITTLE cluster @556MHz and for BIG cluster @729MHz for 66ms
 echo Lineage Based ROM detected
 echo Applying appropriate values.
-echo Enabling Input Boost at 556 MHz for the LITTLE cluster and at 729 MHz for the BIG Cluster
+echo Enabling Input Boost at 556 MHz for the LITTLE cluster and at 556 MHz for the BIG Cluster
+if [ -e "/sys/module/cpu_boost/parameters/input_boost_freq" ]; then
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_freq
-echo 0:556800 1:0 2:729600 3:0 > /sys/module/cpu_boost/parameters/input_boost_freq
-chmod 644 /sys/module/cpu_boost/parameters/boost_ms
-echo 0 > /sys/module/cpu_boost/parameters/boost_ms
+echo 0:537600  1:0 2:537600 3:0 > /sys/module/cpu_boost/parameters/input_boost_freqs
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_ms
 echo 66 > /sys/module/cpu_boost/parameters/input_boost_ms
+else
+echo "*Input Boost is not avalible for your Kernel*"
+fi
+if [ -e "/sys/module/cpu_boost/parameters/boost_ms" ]; then
+chmod 644 /sys/module/cpu_boost/parameters/boost_ms
+echo 0 > /sys/module/cpu_boost/parameters/boost_ms
+else
+echo "*Cpu_Boost is not avalible for your Kernel*"
+fi
 else
 #Enable Input Boost for LITTLE cluster @729MHz and for BIG cluster @729Hz for 100ms
 echo Non-Lineage ROM detected
 echo Applying appropriate values.
-echo Enabling Input Boost at 729 MHz for the LITTLE cluster and at 940 MHz for the BIG Cluster
+echo Enabling Input Boost at 556 MHz for the LITTLE cluster and at 729 MHz for the BIG Cluster
+if [ -e "/sys/module/cpu_boost/parameters/input_boost_freq" ]; then
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_freq
-echo 0:729600 1:0 2:940800 3:0 > /sys/module/cpu_boost/parameters/input_boost_freq
+echo 0:537600  1:748800 2:0 3:0 > /sys/module/cpu_boost/parameters/input_boost_freq
+chmod 644 /sys/module/cpu_boost/parameters/input_boost_ms
+echo 77 > /sys/module/cpu_boost/parameters/input_boost_ms
+else
+echo "*Input Boost is not avalible for your Kernel*"
+fi
+if [ -e "/sys/module/cpu_boost/parameters/boost_ms" ]; then
 chmod 644 /sys/module/cpu_boost/parameters/boost_ms
 echo 0 > /sys/module/cpu_boost/parameters/boost_ms
-chmod 644 /sys/module/cpu_boost/parameters/input_boost_ms
-echo 100 > /sys/module/cpu_boost/parameters/input_boost_ms
+else
+echo "*Cpu_Boost is not avalible for your Kernel*"
+fi
+fi
 fi
 sleep 0.3
 echo "=========================================="
@@ -242,11 +274,17 @@ else
 fi
 #Disable BCL
 echo Disabling BCL and Removing Perfd
+if [ -e "/sys/devices/soc/soc:qcom,bcl/mode" ]; then
 echo -n disable > /sys/devices/soc/soc:qcom,bcl/mode
+fi
 #Enable Core Control and Disable MSM Thermal Throttling allowing for longer sustained performance
 echo Disabling Aggressive CPU Thermal Throttling
+if [ -e "/sys/module/msm_thermal/core_control/enabled" ]; then
 echo 1 > /sys/module/msm_thermal/core_control/enabled
+fi
+if [ -e "/sys/module/msm_thermal/parameters/enabled" ]; then
 echo N > /sys/module/msm_thermal/parameters/enabled
+fi
 #Tweak HMP Scheduler to feed the Big cluster more tasks
 sleep 0.3
 #echo Tweaking HMP Scheduler for correcting BIG Cluster utilization
