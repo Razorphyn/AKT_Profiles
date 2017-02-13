@@ -10,7 +10,7 @@
 #TWEAKS_BEGIN
 echo ""
 echo --------------------------------------------------------
-echo Applying 'Project X.A.N.A (Battery variant)' v4.2
+echo Applying 'Project X.A.N.A (Battery variant)' v4.3
 echo Advanced Kernel Settings
 echo --------------------------------------------------------
 sleep 0.5
@@ -18,8 +18,8 @@ echo Author: Asiier
 echo Settings By: Asiier
 echo Device: One Plus 3
 echo Codename: 'Project X.A.N.A (BT)'
-echo Build Status: Stable
-echo Last Updated: 22/01/2017
+echo Build Status: BETA
+echo Last Updated: 12/02/2017
 echo For more information go to the XDA theard
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sleep 0.3
@@ -324,7 +324,7 @@ if [ -e "/proc/sys/kernel/sched_freq_dec_notify" ]; then
 	echo 410000 > /proc/sys/kernel/sched_freq_dec_notify
 fi
 if [ -e "/proc/sys/kernel/sched_freq_inc_notify" ]; then
-	echo 610000 > /proc/sys/kernel/sched_freq_inc_notify
+	echo 510000 > /proc/sys/kernel/sched_freq_inc_notify
 fi
 if [ -e "/proc/sys/kernel/sched_boost" ]; then
 	echo 0 > /proc/sys/kernel/sched_boost
@@ -417,8 +417,12 @@ echo ·Memory Values
 echo 0 > /proc/sys/vm/swappiness
 echo 100 > /proc/sys/vm/vfs_cache_pressure
 echo 80 > /proc/sys/vm/dirty_ratio
-echo 50 > /proc/sys/vm/dirty_background_ratio
+echo 20 > /proc/sys/vm/dirty_background_ratio
 echo 4096 > /proc/sys/vm/min_free_kbytes
+echo 100 > /proc/sys/vm/dirty_expire_centisecs
+echo 250 > /proc/sys/vm/dirty_writeback_centisecs
+echo 0 > /proc/sys/vm/oom_kill_allocating_task
+echo 3 > /proc/sys/vm/page-cluster
 if [ -e "/sys/module/lowmemorykiller/parameters/enable_adaptive_lmk" ]; then
 chmod 666 /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
 chown root /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
