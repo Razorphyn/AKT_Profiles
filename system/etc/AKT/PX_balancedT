@@ -134,7 +134,7 @@ if test $maxfreq -eq 2342400; then
     echo No BIG Cluster Overclocking detected. 
     echo Applying appropriate values.
     chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
-    echo 2150400 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq     #Core 2 Maximum Frequency = 2150MHz         
+    echo 2342400 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq     #Core 2 Maximum Frequency = 2150MHz         
     chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
     chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
     echo 65 748800:75 902400:80 1056000:99 1440000:97 1824000:99 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
@@ -145,7 +145,7 @@ elif test $maxfreq -eq 2342400; then
     echo BIG Cluster Overclocking detected. 
     echo Applying appropriate values.
     chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
-    echo 2265600 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq     #Core 2 Maximum Frequency = 2265MHz         
+    echo 2342400 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq     #Core 2 Maximum Frequency = 2265MHz         
     chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
     chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
     echo 65 748800:75 902400:80 1056000:99 1440000:97 1824000:99 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
