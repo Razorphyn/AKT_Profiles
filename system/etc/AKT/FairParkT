@@ -227,7 +227,7 @@ if grep -q 'ro.build.flavor=lineage_oneplus3-userdebug' /system/build.prop; then
 #Enable Input Boost for LITTLE cluster @556MHz and for BIG cluster @729MHz for 66ms
 echo Lineage Based ROM detected
 echo Applying appropriate values.
-echo Enabling Input Boost at 556 MHz for the LITTLE cluster and at 729 MHz for the BIG Cluster
+echo Enabling Input Boost for the LITTLE cluster @729 MHz and for the BIG Cluster @940Mhz.
 if [ -e "/sys/module/cpu_boost/parameters/input_boost_freq" ]; then
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_freq
 echo 0:748800 1:0 2:902400 3:0 > /sys/module/cpu_boost/parameters/input_boost_freq
