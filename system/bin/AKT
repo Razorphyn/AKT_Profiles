@@ -268,7 +268,7 @@ echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 5; main_menu_op3t;
 exit;;
-4 ) #Project_XANA_Battery
+5 ) #Project_XANA_Battery
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
@@ -287,7 +287,7 @@ echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 5; main_menu_op3t;
 exit;;
-5 ) #Project_XANA_Extreme
+6 ) #Project_XANA_Extreme
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
@@ -306,12 +306,12 @@ echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 5; main_menu_op3t;
 exit;;
-6 ) echo "Coming soon"
+7 ) echo "Coming soon"
 echo " You tell me what to add here"
 sleep 2;
 clear; main_menu_op3t;
 exit;;
-7 ) clear; main_menu_op3t;;
+8 ) clear; main_menu_op3t;;
 * ) clear; echo " Please, enter a valid option..."; 
 sleep 2;
 clear;;
@@ -882,7 +882,7 @@ while true; do
 clear
 echo ""
 echo $divider
-echo -e "\e[01;36m - Advanced·Kernel·Tweaks - \e[00;37m"
+echo -e "\e[01;36m < Advanced·Kernel·Tweaks > \e[00;37m"
 echo -e "\e[01;36m          - A·K·T -   \e[00;37m"
 echo -e "\e[01;36m  -for OP3 and SD820 Devices-  \e[00;37m"
 echo $divider
@@ -931,7 +931,7 @@ while true; do
 clear
 echo ""
 echo $divider
-echo -e "\e[01;36m - Advanced·Kernel·Tweaks - \e[00;37m"
+echo -e "\e[01;36m < Advanced·Kernel·Tweaks > \e[00;37m"
 echo -e "\e[01;36m          - A·K·T -   \e[00;37m"
 echo -e "\e[01;36m  for OP3T and SD821 Devices  \e[00;37m"
 echo $divider
