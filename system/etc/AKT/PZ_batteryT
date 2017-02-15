@@ -16,10 +16,10 @@ echo --------------------------------------------------------
 sleep 0.5
 echo Author: Asiier
 echo Settings By: Asiier
-echo Device: One Plus 3
+echo Device: One Plus 3T & SD821 Devices
 echo Codename: 'Project Zhana (BT)'
-echo Build Status: Stable
-echo Last Updated: 22/01/2017
+echo Build Status: BETA
+echo Last Updated: 15/02/2017
 echo For more information go to the XDA theard
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sleep 0.3
