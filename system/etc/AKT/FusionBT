@@ -12,7 +12,7 @@ echo Applying 'FusionB (Balanced Profile)'
 echo Advanced Kernel Settings
 echo -----------------------------------------------
 sleep 0.5
-echo Device: One Plus 3
+echo Device: One Plus 3T & SD821 Devices
 echo BETA
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sleep 0.3
