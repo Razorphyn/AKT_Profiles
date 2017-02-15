@@ -21,7 +21,7 @@ echo ------------------------------------------------------------
 sleep 0.5
 echo Author: Asiier
 echo Settings By: Asiier
-echo Device: One Plus 3 & SD820 Devices
+echo "Device: One Plus 3 & SD820 Devices"
 echo Codename: 'Project X.A.N.A (BE)'
 echo Build Status: Stable
 echo Last Updated: 22/01/2017
@@ -229,7 +229,7 @@ echo Applying appropriate values.
 echo Disabling Input Boost for the LITTLE cluster and BIG Cluster
 if [ -e "/sys/module/cpu_boost/parameters/input_boost_freq" ]; then
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_freq
-echo 0:0  1:0 2:0 3:0 > /sys/module/cpu_boost/parameters/input_boost_freqs
+echo 0:0  1:0 2:0 3:0 > /sys/module/cpu_boost/parameters/input_boost_freq
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_ms
 echo 0 > /sys/module/cpu_boost/parameters/input_boost_ms
 else
@@ -439,7 +439,7 @@ else
 fi
 #Tweaking GPU
 sleep 0.4
-echo GPU Underclocking
+echo GPU Tweaking
 echo powersave > /sys/devices/soc/b00000.qcom,kgsl-3d0/devfreq/b00000.qcom,kgsl-3d0/governor
 if grep -q 'ro.build.version.sdk=25' /system/build.prop; then
 	if grep -q 'ro.build.flavor=lineage_oneplus3-userdebug' /system/build.prop; then

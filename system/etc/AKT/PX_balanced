@@ -16,7 +16,7 @@ echo --------------------------------------------------------
 sleep 0.5
 echo Author: Asiier
 echo Settings By: Asiier
-echo Device: One Plus 3 & SD820 Devices
+echo "Device: One Plus 3 & SD820 Devices"
 echo Codename: 'Project X.A.N.A (B)'
 echo Build Status: Stable
 echo Last Updated: 22/01/2017
@@ -213,7 +213,7 @@ if [ -e "/sys/kernel/cpu_input_boost/enabled" ]; then
     chmod 644 /sys/kernel/cpu_input_boost/*
     echo 1 > /sys/kernel/cpu_input_boost/enabled
     echo 66 > /sys/kernel/cpu_input_boost/ib_duration_ms
-    echo 556800 556800 > /sys/kernel/cpu_input_boost/ib_freq
+    echo 556800 556800 > /sys/kernel/cpu_input_boost/ib_freqs
     chmod 444 /sys/kernel/cpu_input_boost/*
     chmod 644 /sys/kernel/msm_thermal/enabled
     echo 0 > /sys/kernel/msm_thermal/enabled
@@ -248,7 +248,7 @@ echo Applying appropriate values.
 echo Enabling Input Boost at 556 MHz for the LITTLE cluster and at 729 MHz for the BIG Cluster
 if [ -e "/sys/module/cpu_boost/parameters/input_boost_freq" ]; then
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_freq
-echo 0:556800  1:0 2:729600 3:0 > /sys/module/cpu_boost/parameters/input_boost_freqs
+echo 0:556800  1:0 2:729600 3:0 > /sys/module/cpu_boost/parameters/input_boost_freq
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_ms
 echo 77 > /sys/module/cpu_boost/parameters/input_boost_ms
 else
@@ -444,7 +444,7 @@ else
 fi
 #Tweaking GPU
 sleep 0.4
-echo GPU Underclocking
+echo GPU Tweaking
 echo msm-adreno-tz > /sys/devices/soc/b00000.qcom,kgsl-3d0/devfreq/b00000.qcom,kgsl-3d0/governor
 if grep -q 'ro.build.version.sdk=25' /system/build.prop; then
 	if grep -q 'ro.build.flavor=lineage_oneplus3-userdebug' /system/build.prop; then

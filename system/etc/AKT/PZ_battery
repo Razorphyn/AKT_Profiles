@@ -209,11 +209,11 @@ echo Checking ROM...
 sleep 0.2
 echo Applying appropriate values.
 if [ -e "/sys/kernel/cpu_input_boost/enabled" ]; then
-    echo Enabling Input Boost for the LITTLE cluster @480 MHz and for the BIG Cluster @0Mhz and Custom thermal driver of Sultanxda
+    echo Enabling Input Boost for the LITTLE cluster @556 MHz and for the BIG Cluster @0Mhz and Custom thermal driver of Sultanxda
     chmod 644 /sys/kernel/cpu_input_boost/*
     echo 1 > /sys/kernel/cpu_input_boost/enabled
     echo 66 > /sys/kernel/cpu_input_boost/ib_duration_ms
-    echo 480000 0 > /sys/kernel/cpu_input_boost/ib_freq
+    echo 556800 0 > /sys/kernel/cpu_input_boost/ib_freqs
     chmod 444 /sys/kernel/cpu_input_boost/*
     chmod 644 /sys/kernel/msm_thermal/enabled
     echo 0 > /sys/kernel/msm_thermal/enabled
@@ -226,10 +226,10 @@ if grep -q 'ro.build.flavor=lineage_oneplus3-userdebug' /system/build.prop; then
 #Enable Input Boost for LITTLE cluster @556MHz and for BIG cluster @729MHz for 66ms
 echo Lineage Based ROM detected
 echo Applying appropriate values.
-echo Enabling Input Boost at 480 MHz for the LITTLE cluster and at 0 MHz for the BIG Cluster
+echo Enabling Input Boost at 556 MHz for the LITTLE cluster and at 0 MHz for the BIG Cluster
 if [ -e "/sys/module/cpu_boost/parameters/input_boost_freq" ]; then
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_freq
-echo 0:480000  1:0 2:0 3:0 > /sys/module/cpu_boost/parameters/input_boost_freq
+echo 0:556800  1:0 2:0 3:0 > /sys/module/cpu_boost/parameters/input_boost_freq
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_ms
 echo 55 > /sys/module/cpu_boost/parameters/input_boost_ms
 else
@@ -245,10 +245,10 @@ else
 #Enable Input Boost for LITTLE cluster @729MHz and for BIG cluster @729Hz for 100ms
 echo Non-Lineage ROM detected
 echo Applying appropriate values.
-echo Enabling Input Boost at 556 MHz for the LITTLE cluster and at 0 MHz for the BIG Cluster
+echo Enabling Input Boost at 729 MHz for the LITTLE cluster and at 0 MHz for the BIG Cluster
 if [ -e "/sys/module/cpu_boost/parameters/input_boost_freq" ]; then
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_freq
-echo 0:556800  1:0 2:0 3:0 > /sys/module/cpu_boost/parameters/input_boost_freqs
+echo 0:729600 1:0 2:0 3:0 > /sys/module/cpu_boost/parameters/input_boost_freq
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_ms
 echo 77 > /sys/module/cpu_boost/parameters/input_boost_ms
 else
@@ -443,7 +443,7 @@ else
 fi
 #Tweaking GPU
 sleep 0.4
-echo GPU Underclocking
+echo GPU Tweaking
 echo msm-adreno-tz > /sys/devices/soc/b00000.qcom,kgsl-3d0/devfreq/b00000.qcom,kgsl-3d0/governor
 if grep -q 'ro.build.version.sdk=25' /system/build.prop; then
 	if grep -q 'ro.build.flavor=lineage_oneplus3-userdebug' /system/build.prop; then

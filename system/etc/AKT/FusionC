@@ -11,7 +11,7 @@ echo Applying 'FusionC (Conservative Profile)'
 echo Advanced Kernel Settings
 echo -----------------------------------------------
 sleep 0.5
-echo Device: One Plus 3 & SD820 Devices
+echo "Device: One Plus 3 & SD820 Devices"
 echo Stable
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sleep 0.3
@@ -222,7 +222,7 @@ echo Applying appropriate values.
 echo Enabling Input Boost for the LITTLE cluster @960 MHz and for the BIG Cluster @940Mhz
 if [ -e "/sys/module/cpu_boost/parameters/input_boost_freq" ]; then
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_freq
-echo 0:960000 1:0 2:940800 3:0 > /sys/module/cpu_boost/parameters/input_boost_freqs
+echo 0:960000 1:0 2:940800 3:0 > /sys/module/cpu_boost/parameters/input_boost_freq
 chmod 644 /sys/module/cpu_boost/parameters/input_boost_ms
 echo 100 > /sys/module/cpu_boost/parameters/input_boost_ms
 else
@@ -438,7 +438,7 @@ else
 fi
 #Tweaking GPU
 sleep 0.4
-echo GPU Clock
+echo GPU Tweaking
 echo msm-adreno-tz > /sys/devices/soc/b00000.qcom,kgsl-3d0/devfreq/b00000.qcom,kgsl-3d0/governor
 if grep -q 'ro.build.version.sdk=25' /system/build.prop; then
 	if grep -q 'ro.build.flavor=lineage_oneplus3-userdebug' /system/build.prop; then

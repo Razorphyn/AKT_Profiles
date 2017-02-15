@@ -16,7 +16,7 @@ echo -----------------------------------------------
 sleep 0.5
 echo Author: Asiier
 echo Settings By: Asiier
-echo Device: One Plus 3
+echo "Device: One Plus 3 & SD820 Devices"
 echo Codename: 'GhostPepper'
 echo Build Status: Stable
 echo Last Updated: 15/12/2016
@@ -431,7 +431,7 @@ else
 fi
 #Tweaking GPU
 sleep 0.4
-echo GPU Underclocking
+echo GPU Tweaking
 echo msm-adreno-tz > /sys/devices/soc/b00000.qcom,kgsl-3d0/devfreq/b00000.qcom,kgsl-3d0/governor
 if grep -q 'ro.build.version.sdk=25' /system/build.prop; then
 	if grep -q 'ro.build.flavor=lineage_oneplus3-userdebug' /system/build.prop; then
