@@ -979,11 +979,13 @@ done
 echo ""
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
-echo "We don't support any other device. If you still want to use the tweaks select from above the device most similar to your device. But expect NO SUPPORT for us!!!"
 echo -e "\e[01;31m We don't support any other device. \e[00;37m"
+sleep 2
 echo -e "\e[01;31m If you still want to use the tweaks select from above the device most similar to your device. \e[00;37m"
+sleep 3
 echo -e "\e[01;31m But expect NO SUPPORT for us!!! \e[00;37m"
-sleep 5
+sleep 2
+sleep 4
 echo -e "\e[02;39m Going back to Main Menu ... \e[00;37m"
 sleep 5
 clear
@@ -996,7 +998,7 @@ while true; do
 clear
 echo ""
 echo $divider
-echo -e "\e[01;36m - Advanced·Kernel·Tweaks - \e[00;37m"
+echo -e "\e[01;36m < Advanced·Kernel·Tweaks > \e[00;37m"
 echo -e "\e[01;36m          - A·K·T -   \e[00;37m"
 echo $divider
 echo -e "\e[01;36m        - Main Menu -  \e[00;37m"
