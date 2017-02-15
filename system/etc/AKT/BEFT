@@ -11,7 +11,7 @@ echo " Brace Yourselves. It's time for some power! "
 echo Advanced Kernel Settings
 echo --------------------------------------------
 sleep 0.5
-echo Device: One Plus 3
+echo Device: One Plus 3T & SD821 Devices
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sleep 0.3
 echo Checking Android version...

@@ -14,8 +14,8 @@ echo Applying 'FusionB (Balanced Profile)'
 echo Advanced Kernel Settings
 echo -----------------------------------------------
 sleep 0.5
-echo Device: One Plus 3
-echo BETA
+echo Device: One Plus 3 & SD820 Devices
+echo Stable
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sleep 0.3
 echo Checking Android version...
