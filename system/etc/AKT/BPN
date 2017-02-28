@@ -1,17 +1,20 @@
 #!/system/bin/sh
 #Interactive Governor tweaks for OnePlus 3.
+#Fusion profiles are set for a balanced and performance use.
+#FusionB, FusionP and Stock settings are present in this script.
+#FusionB is tweaked in a way that Cluster 1 (small) uses mostly the frequencies from 307 to 1324 and when needed, Cluster 2(big) enters to help, using frequencies up to 1632 and jumping above that when extreme load is present.
+#FusionP is still in development
 #Stock are the stock settings from ElementalX kernel
-#Scripts made by Senthil360 and Asiier and changed by Mostafa Wael
+#Scripts made by Senthil360 and Asiier and changed by patalao
 #Credits for @Asiier/@Mostafa Wael/@Senthil360
 #TWEAKS_BEGIN
 echo ""
-echo --------------------------------------------
-echo Applying 'Burnout PR3'
-echo Your Ford GT is ready with some bottles of nitro. Enjoy some donuts and the smell of burnt tires :D
-echo Advanced Kernel Settings
-echo --------------------------------------------
+echo ------------------------------------------------------------
+echo Transforming your phone into a Dodge Challenger Hellcat. Enjoy some donuts and the smell of burnt tires :D
+echo Advanced Interactive Governor Settings
+echo ------------------------------------------------------------
 sleep 0.5
-echo Device: One Plus 3
+echo Device: OnePlus 3
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sleep 0.3
 echo Checking Android version...
@@ -28,7 +31,7 @@ fi
 if grep -q 'ro.build.version.sdk=23' /system/build.prop; then
 	echo Android Marshmallow 6.0.1 detected!
 	sleep 0.3
-	echo MM detected... Settings may not act as expected!
+	echo MM detected... Applying proper settings
 fi
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sleep 0.3
@@ -64,14 +67,12 @@ else
 fi
 chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/*
 echo 80000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack
-chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
-echo 40 844800:65 1324800:84 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
-chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
-echo 40000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
-echo 90000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
-echo 87 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
+echo 50 844800:69 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
+echo 20000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
+echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
+echo 75 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
 echo 40000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time
-echo 120000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
+echo 79000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
 echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/ignore_hispeed_on_notif
 echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/boost
 echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/fast_ramp_down
@@ -125,14 +126,12 @@ sleep 0.5
 #Tweak Interactive Governor
 chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/*
 echo 80000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_slack
-chmod 644 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
-echo 55 729600:65 1324800:75 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
-chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
-echo 40000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_rate
-echo 90000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay
+echo 45 1555200:75 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
+echo 20000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_rate
+echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay
 echo 85 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/go_hispeed_load
-echo 40000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time
-echo 99000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/max_freq_hysteresis
+echo 60000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time
+echo 79000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/max_freq_hysteresis
 echo 1 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/ignore_hispeed_on_notif
 echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/boost
 echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/fast_ramp_down
@@ -178,7 +177,7 @@ else
 fi
 #Disable BCL
 echo Disabling BCL and Removing Perfd
-echo -n disable > /sys/devices/soc/soc:qcom,bcl/mode
+echo disable > /sys/devices/soc/soc:qcom,bcl/mode
 #Enable Core Control and Disable MSM Thermal Throttling allowing for longer sustained performance
 echo Disabling Aggressive CPU Thermal Throttling
 echo 1 > /sys/module/msm_thermal/core_control/enabled
@@ -188,17 +187,15 @@ sleep 0.3
 echo Tweaking HMP Scheduler for correcting BIG Cluster utilization
 echo 2 > /proc/sys/kernel/sched_window_stats_policy
 echo 60 > /proc/sys/kernel/sched_downmigrate
-echo 80 > /proc/sys/kernel/sched_upmigrate
-echo 10 > /proc/sys/kernel/sched_spill_nr_run
-echo 97 > /proc/sys/kernel/sched_spill_load
-echo 12 > /proc/sys/kernel/sched_upmigrate_min_nice
+echo 85 > /proc/sys/kernel/sched_upmigrate
+echo 2 > /proc/sys/kernel/sched_spill_nr_run
+echo 90 > /proc/sys/kernel/sched_spill_load
+echo 15 > /proc/sys/kernel/sched_upmigrate_min_nice
 echo 950000 > /proc/sys/kernel/sched_rt_runtime_us
 echo 1000000 > /proc/sys/kernel/sched_rt_period_us
 echo 4 > /proc/sys/kernel/sched_ravg_hist_size
 echo 1 > /proc/sys/kernel/sched_new_task_windows
-echo 100 > /proc/sys/kernel/sched_init_task_load
-echo 1 > /proc/sys/kernel/sched_restrict_cluster_spill
-echo 9 > /proc/sys/kernel/sched_rr_timeslice_ms
+echo 50 > /proc/sys/kernel/sched_init_task_load
 if [ -e "/proc/sys/kernel/sched_heavy_task" ]; then
     echo 60 > /proc/sys/kernel/sched_heavy_task
 fi
@@ -217,6 +214,7 @@ fi
 if [ -e "/proc/sys/kernel/sched_big_waker_task_load" ]; then
 	echo 35 > /proc/sys/kernel/sched_big_waker_task_load
 fi
+echo 1 > /proc/sys/kernel/sched_migration_fixup
 if [ -e "/proc/sys/kernel/sched_freq_dec_notify" ]; then
 	echo 410000 > /proc/sys/kernel/sched_freq_dec_notify
 fi
@@ -226,12 +224,59 @@ fi
 if [ -e "/proc/sys/kernel/sched_boost" ]; then
 	echo 1 > /proc/sys/kernel/sched_boost
 fi
+echo Checking Android version...
+if grep -q 'ro.build.version.sdk=25' /system/build.prop; then
+	echo Android Nougat 7.1.X detected!
+	sleep 0.3
+	echo N detected... Applying minor adjustments
+	echo 40000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
+	echo 40000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_rate
+	echo 40 844800:65 1324800:84 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
+	echo 55 729600:65 1324800:75 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
+ echo 87 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
+ echo 99000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
+ echo 100000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
+ echo 99000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay
+ echo 19000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
+ echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time
+	echo 4 > /proc/sys/kernel/sched_spill_nr_run
+	echo 97 > /proc/sys/kernel/sched_spill_load
+	echo 12 > /proc/sys/kernel/sched_upmigrate_min_nice
+	echo 100 > /proc/sys/kernel/sched_init_task_load
+ echo 1 > /proc/sys/kernel/sched_restrict_cluster_spill
+ echo 5 > /proc/sys/kernel/sched_small_wakee_task_load
+ echo 35 > /proc/sys/kernel/sched_big_waker_task_load
+fi
+if grep -q 'ro.build.version.sdk=24' /system/build.prop; then
+	echo Android Nougat 7.0.X detected!
+	sleep 0.3
+	echo N detected... Applying minor adjustments
+	echo 40000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
+	echo 40000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_rate
+	echo 40 844800:65 1324800:84 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
+	echo 55 729600:65 1324800:75 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
+ echo 87 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
+ echo 99000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
+ echo 100000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
+ echo 99000 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay
+ echo 19000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
+ echo 0 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time
+	echo 4 > /proc/sys/kernel/sched_spill_nr_run
+	echo 97 > /proc/sys/kernel/sched_spill_load
+	echo 12 > /proc/sys/kernel/sched_upmigrate_min_nice
+	echo 100 > /proc/sys/kernel/sched_init_task_load
+fi
+if grep -q 'ro.build.version.sdk=23' /system/build.prop; then
+	echo Android Marshmallow 6.0.1 detected!
+	sleep 0.3
+	echo MM detected... Proper settings applied
+fi
 #Tweaks for other various Settings
 sleep 0.5
 echo "=========================================="
 echo Tweaking other various Settings
 echo ·I/O Values
-if [ -d /sys/block/dm-0 ] || [ -d /sys/devices/virtual/block/dm-0 ]; then
+if [ -d /sys/block/dm-0 ] || [-d /sys/devices/virtual/block/dm-0 ]; then
 if [ -e /sys/devices/virtual/block/dm-0/queue/scheduler ]; then
     DM_PATH=/sys/devices/virtual/block/dm-0/queue
 fi
@@ -250,8 +295,6 @@ if [ "$Cfq_Available" == "true" ]; then
     echo cfq > $DM_PATH/scheduler
     sleep 2
     echo 2 > $DM_PATH/iosched/back_seek_penalty
-    echo 0 > $DM_PATH/iosched/group_idle
-    echo 0 > $DM_PATH/iosched/slice_idle
     echo 1 > $DM_PATH/iosched/low_latency
     echo 8 > $DM_PATH/iosched/quantum
     echo 100 > $DM_PATH/iosched/target_latency
@@ -292,8 +335,6 @@ for i in /sys/block/../devices/soc/624000.ufshc/host0/target0:0:0/0:0:0:[0-4]/bl
       string6=$($BB cat $i/scheduler | cut -d ']' -f1 | cut -d '[' -f2)
       if [ "$string6" == "cfq" ]; then
          echo 2 > $i/iosched/back_seek_penalty
-         echo 0 > $i/iosched/group_idle
-         echo 0 > $i/iosched/slice_idle
          echo 1 > $i/iosched/low_latency
          echo 8 > $i/iosched/quantum
          echo 100 > $i/iosched/target_latency
@@ -330,41 +371,11 @@ else
 	echo cubic not avilable, using westwood
 	echo westwood > /proc/sys/net/ipv4/tcp_congestion_control 
 fi
-#Tweaking GPU
-sleep 0.4
-echo GPU Tweaking
-echo msm-adreno-tz > /sys/devices/soc/b00000.qcom,kgsl-3d0/devfreq/b00000.qcom,kgsl-3d0/governor
-if grep -q 'ro.build.version.sdk=25' /system/build.prop; then
-	if grep -q 'ro.build.flavor=cm_oneplus3-userdebug' /system/build.prop; then
-   		echo 624000000 > /sys/class/kgsl/kgsl-3d0/max_gpuclk
-	else
-    		echo 624000000 > /sys/class/kgsl/kgsl-3d0/max_gpuclk
-	fi
-fi
-if grep -q 'ro.build.version.sdk=24' /system/build.prop; then
-	if grep -q 'ro.build.flavor=cm_oneplus3-userdebug' /system/build.prop; then
-   		echo 624000000 > /sys/class/kgsl/kgsl-3d0/max_gpuclk
-	else
-    		echo 624000000 > /sys/class/kgsl/kgsl-3d0/max_gpuclk
-	fi
-fi
-if grep -q 'ro.build.version.sdk=23' /system/build.prop; then
-	if grep -q 'ro.build.flavor=cm_oneplus3-userdebug' /system/build.prop; then
-   		echo 624000000 > /sys/devices/soc/b00000.qcom,kgsl-3d0/devfreq/b00000.qcom,kgsl-3d0/max_freq
-	else
-    		echo 624000000 > /sys/devices/soc/b00000.qcom,kgsl-3d0/devfreq/b00000.qcom,kgsl-3d0/max_freq
-	fi
-	else
-	if grep -q 'ro.build.flavor=cm_oneplus3-userdebug' /system/build.prop; then
-   		echo 624000000 > /sys/devices/soc/b00000.qcom,kgsl-3d0/devfreq/b00000.qcom,kgsl-3d0/max_freq
-	else
-    		echo 624000000 > /sys/devices/soc/b00000.qcom,kgsl-3d0/devfreq/b00000.qcom,kgsl-3d0/max_freq
-	fi
-fi
+
 sleep 1
 echo ------------------------------------------------------------
-echo 'Burnout PR3.2' Successfully Applied!
-echo "Burnout PR3.2" > /data/system/current_profile
+echo 'Burnout_PR3_rebooted' Successfully Applied!
+echo "Burnout_PR3_rebooted" > /data/system/current_profile
 echo   You may now tweak them further
 echo    using EXKM or Kernel Adiutor
 echo ------------------------------------------------------------
