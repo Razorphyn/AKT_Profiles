@@ -11,7 +11,7 @@ echo -e "\e[01;36m - Advanced·Kernel·Tweaks - \e[00;37m"
 echo -e "\e[01;36m         - [A·K·T] -   \e[00;37m"
 echo -e "\e[01;36m       ~ BETA - 1.4 ~   \e[00;37m"
 echo $divider
-sleep 0.5
+sleep 1
 echo ""
 echo -e "\e[01;36m *** By Asiier & Senthil360 *** \e[00;37m"
 echo ""
