@@ -9,7 +9,7 @@ echo $divider
 echo -e "\e[01;36m   - All-in-One Project - \e[00;37m"
 echo -e "\e[01;36m - Advanced·Kernel·Tweaks - \e[00;37m"
 echo -e "\e[01;36m         - [A·K·T] -   \e[00;37m"
-echo -e "\e[01;36m       ~ BETA - 1.4 ~   \e[00;37m"
+echo -e "\e[01;36m      ~ Stable - 1.5 ~   \e[00;37m"
 echo $divider
 sleep 1
 echo ""
@@ -845,6 +845,7 @@ rm -rf /system/su.d/99AKT
 rm -rf /system/etc/init.d/99AKT
 rm -rf /system/etc/AKT
 rm -rf /system/bin/AKT
+rm -rf /system/bin/ATT
 echo -e "\e[01;31m Permission resetted... \e[00;37m"
 echo -e "\e[01;31m Files removed from /sytem ... \e[00;37m"
 echo -e "\e[01;31m Please, reboot the device for fully removing the tweaks... \e[00;37m"
@@ -993,6 +994,29 @@ clear
 sleep 2; main_menu;
 exit;
  }
+ function reapply
+{
+echo ""
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+clear
+chmod 700 /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+if [ -e "/system/etc/init.d/99AKT" ]; then
+sh /system/etc/init.d/99AKT
+clear
+else 
+if [ -e "/system/su.d/99AKT" ]; then
+sh /system/su.d/99AKT
+clear
+else
+echo -e "\e[01;31m Files not found or empty, check If the installation was succeful or try to Apply the profile at least onces \e[00;37m"
+sleep 4
+fi
+fi
+sleep 2; main_menu;
+exit;
+ }
  function main_menu
 {
 while true; do
@@ -1011,7 +1035,9 @@ echo -e "\e[01;34m  2. OP3T / Snapdragon 821 Device \e[00;37m"
 echo ""
 echo -e "\e[01;35m  3. Other Device \e[00;37m"
 echo ""
-echo -e "\e[01;31m  4. Exit \e[00;37m"
+echo -e "\e[01;37m  4. Reapply Current Profile \e[00;37m"
+echo ""
+echo -e "\e[01;31m  5. Exit \e[00;37m"
 echo ""
 if [ -e /data/system/current_profile ]; then
  echo $divider
@@ -1028,7 +1054,8 @@ case $option in
 	1 ) clear; main_menu_op3 ;;
 	2 ) clear; main_menu_op3t ;;
 	3 ) clear; other ;;
-	4 ) clear; exit ; $BB mount -o remount,ro /system 2>/dev/null ; mount -o remount,ro /system 2>/dev/null ;; 
+	4 ) clear; reapply ;;
+	5 ) clear; exit ; $BB mount -o remount,ro /system 2>/dev/null ; mount -o remount,ro /system 2>/dev/null ;; 
 	* ) echo " Please, enter a valid option..."
 	sleep 2
 	clear;;
