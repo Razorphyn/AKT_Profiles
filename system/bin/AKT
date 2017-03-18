@@ -1000,8 +1000,12 @@ echo ""
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 clear
+if [ -e "/system/su.d/99AKT" ]; then
 chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
 chmod 777 /system/etc/init.d/99AKT
+fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
 sh /system/etc/init.d/99AKT
 clear
