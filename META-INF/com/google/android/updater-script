@@ -56,6 +56,7 @@ set_perm(0, 0, 0777, "/system/etc/AKT/BEFT");
 set_perm(0, 0, 0777, "/system/etc/AKT/GhostPepperT");
 set_perm(0, 0, 0777, "/system/etc/AKT/FairParkT");
 set_perm(0, 0, 0777, "/system/etc/AKT/HawkPepperT");
+set_perm(0, 0, 0777, "/system/etc/AKT/FusionR");
 set_perm(0, 0, 0777, "/system/etc/AKT/Stock");
 set_perm(0, 0, 0777, "/system/etc/AKT/busybox");
 set_perm(0, 0, 0777, "/system/etc/AKT/Hotplug");
