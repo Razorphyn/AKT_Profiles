@@ -856,6 +856,89 @@ esac
 # }
 done
 }
+function EAS_OP3
+{
+while true; do
+echo -e "\e[01;91m   UP  Less Battery / More Performance \e[00;37m"
+echo -e "\e[01;33m   | \e[00;37m"
+echo -e "\e[01;93m   | \e[00;37m"
+echo -e "\e[01;92m DOWN  More Battery / Less Performance \e[00;37m"
+echo ""
+sleep 1.5
+echo -e "\e[01;91m 1.) Burnout EAS by @Mostafa Wael \e[00;37m"
+echo -e "\e[01;90m 2.) Additional tweaks... \e[00;37m"
+echo -e "\e[01;94m 3.) Main menu \e[00;37m"
+echo ""
+echo $divider
+echo ""
+echo -n "Please select a profile:"
+read option
+echo ""
+case $option in
+1 ) #Burnout EAS
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+cat /system/etc/AKT/BEF > /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+cat /system/etc/AKT/BEF > /system/etc/init.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+chmod 777 /system/etc/AKT/BEF
+clear
+sh /system/etc/AKT/BEF
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+2 ) #Burnout PR3.5 
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+cat /system/etc/AKT/BPN > /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+cat /system/etc/AKT/BPN > /system/etc/init.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+clear
+sh /system/etc/AKT/BPN
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+3 )  #Nameless Performance
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+cat /system/etc/AKT/NLB_performance > /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+cat /system/etc/AKT/NLB_performance > /system/etc/init.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+chmod 777 /system/etc/AKT/NLB_performance
+clear
+sh /system/etc/AKT/NLB_performance
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+8 ) clear; main_menu_op3t;;
+* ) echo " Please, enter a valid option..."
+sleep 2
+clear;;
+esac
+# }
+done
+}
 function Remove
 {
 echo ""
