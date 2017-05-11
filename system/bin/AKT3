@@ -1,4 +1,4 @@
- #!/system/bin/sh
+#!/system/bin/sh
 #All-in-One Project
 #Scripted - Asiier & Senthil360
 #Tweaks - @Senthil360 @Mostafa Wael @Patalao @Asiier
@@ -45,15 +45,12 @@ case $option in
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PZ_battery > temp && mv temp /system/su.d/99AKT
+cat /system/etc/AKT/PZ_battery > /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PZ_battery > temp && mv temp /system/etc/init.d/99AKT
+cat /system/etc/AKT/PZ_battery > /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
-fi
-if [ -e "/storage/emulated/0/AKT/AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PZ_battery > temp && mv temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/PZ_battery
 clear
@@ -61,18 +58,17 @@ sh /system/etc/AKT/PZ_battery
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 10
 sleep 5; main_menu_op3;
 exit;;
 2 ) #Nameless_Battery 
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/NLB_battery > temp && mv temp /system/su.d/99AKT
+cat /system/etc/AKT/NLB_battery > /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/NLB_battery > temp && mv temp /system/etc/init.d/99AKT
+cat /system/etc/AKT/NLB_battery > /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/NLB_battery
@@ -87,11 +83,11 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/FairPark > temp && mv temp /system/su.d/99AKT
+cat /system/etc/AKT/FairPark > /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/FairPark > temp && mv temp /system/etc/init.d/99AKT
+cat /system/etc/AKT/FairPark > /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/FairPark
@@ -106,11 +102,11 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/FusionC > temp && mv temp /system/su.d/99AKT
+cat /system/etc/AKT/FusionC > /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/FusionC > temp && mv temp /system/etc/init.d/99AKT
+cat /system/etc/AKT/FusionC > /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/FusionP
@@ -125,11 +121,11 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PX_battery > temp && mv temp /system/su.d/99AKT
+cat /system/etc/AKT/PX_battery > /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PX_battery > temp && mv temp /system/etc/init.d/99AKT
+cat /system/etc/AKT/PX_battery > /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/PX_battery
@@ -144,11 +140,11 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PX_battery_extreme > temp && mv temp /system/su.d/99AKT
+cat /system/etc/AKT/PX_battery_extreme > /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PX_battery_extreme > temp && mv temp /system/etc/init.d/99AKT
+cat /system/etc/AKT/PX_battery_extreme > /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/PX_battery_extreme
@@ -200,11 +196,11 @@ case $option in
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PZ_batteryT > temp && mv temp /system/su.d/99AKT
+cat /system/etc/AKT/PZ_batteryT > /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PZ_batteryT > temp && mv temp /system/etc/init.d/99AKT
+cat /system/etc/AKT/PZ_batteryT > /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/PZ_batteryT
@@ -213,18 +209,17 @@ sh /system/etc/AKT/PZ_batteryT
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 10
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op3t;
 exit;;
 2 ) #Nameless_Battery 
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/NLB_batteryT > temp && mv temp /system/su.d/99AKT
+cat /system/etc/AKT/NLB_batteryT > /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/NLB_batteryT > temp && mv temp /system/etc/init.d/99AKT
+cat /system/etc/AKT/NLB_batteryT > /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/NLB_batteryT
@@ -233,17 +228,17 @@ sh /system/etc/AKT/NLB_batteryT
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op3t;
 exit;;
 3 ) #FairPark
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/FairParkT > temp && mv temp /system/su.d/99AKT
+cat /system/etc/AKT/FairParkT > /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/FairParkT > temp && mv temp /system/etc/init.d/99AKT
+cat /system/etc/AKT/FairParkT > /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/FairParkT
@@ -252,17 +247,17 @@ sh /system/etc/AKT/FairParkT
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op3t;
 exit;;
 4 ) #Fusion Conservative
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/FusionCT > temp && mv temp /system/su.d/99AKT
+cat /system/etc/AKT/FusionCT > /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/FusionCT > temp && mv temp /system/etc/init.d/99AKT
+cat /system/etc/AKT/FusionCT > /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/FusionCT
@@ -271,17 +266,17 @@ sh /system/etc/AKT/FusionCT
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op3t;
 exit;;
 5 ) #Project_XANA_Battery
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PX_batteryT > temp && mv temp /system/su.d/99AKT
+cat /system/etc/AKT/PX_batteryT > /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PX_batteryT > temp && mv temp /system/etc/init.d/99AKT
+cat /system/etc/AKT/PX_batteryT > /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/PX_batteryT
@@ -290,17 +285,17 @@ sh /system/etc/AKT/PX_batteryT
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op3t;
 exit;;
 6 ) #Project_XANA_Extreme
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PX_battery_extremeT > temp && mv temp /system/su.d/99AKT
+cat /system/etc/AKT/PX_battery_extremeT > /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PX_battery_extremeT > temp && mv temp /system/etc/init.d/99AKT
+cat /system/etc/AKT/PX_battery_extremeT > /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/PX_battery_extremeT
@@ -309,14 +304,14 @@ sh /system/etc/AKT/PX_battery_extremeT
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op3t;
 exit;;
 7 ) echo "Coming soon"
 echo " You tell me what to add here"
 sleep 2;
-clear; main_menu_op3;
+clear; main_menu_op3t;
 exit;;
-8 ) clear; main_menu_op3;;
+8 ) clear; main_menu_op3t;;
 * ) clear; echo " Please, enter a valid option..."; 
 sleep 2;
 clear;;
@@ -350,11 +345,11 @@ case $option in
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/BEF > temp && mv temp /system/etc/init.d/99AKT
+cat /system/etc/AKT/BEF > /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/BEF > temp && mv temp /system/su.d/99AKT
+cat /system/etc/AKT/BEF > /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/BEF
@@ -369,11 +364,11 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/BPN > temp && mv temp /system/etc/init.d/99AKT
+cat /system/etc/AKT/BPN > /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/BPN > temp && mv temp /system/su.d/99AKT
+cat /system/etc/AKT/BPN > /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 clear
@@ -1093,7 +1088,7 @@ echo -e "\e[01;31m We don't support any other device. \e[00;37m"
 sleep 2
 echo -e "\e[01;31m If you still want to use the tweaks select from above the device most similar to your device. \e[00;37m"
 sleep 3
-echo -e "\e[01;31m But expect NO SUPPORT from us!!! \e[00;37m"
+echo -e "\e[01;31m But expect NO SUPPORT for us!!! \e[00;37m"
 sleep 2
 sleep 4
 echo -e "\e[02;39m Going back to Main Menu ... \e[00;37m"
