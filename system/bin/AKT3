@@ -9,7 +9,7 @@ echo $divider
 echo -e "\e[01;36m   - All-in-One Project - \e[00;37m"
 echo -e "\e[01;36m - Advanced·Kernel·Tweaks - \e[00;37m"
 echo -e "\e[01;36m         - [A·K·T] -   \e[00;37m"
-echo -e "\e[01;36m      ~ Stable - 1.5 ~   \e[00;37m"
+echo -e "\e[01;36m      ~ Stable - 1.6 ~   \e[00;37m"
 echo $divider
 sleep 1
 echo ""

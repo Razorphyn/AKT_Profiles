@@ -9,12 +9,15 @@ echo $divider
 echo -e "\e[01;36m   - All-in-One Project - \e[00;37m"
 echo -e "\e[01;36m - Advanced·Kernel·Tweaks - \e[00;37m"
 echo -e "\e[01;36m         - [A·K·T] -   \e[00;37m"
-echo -e "\e[01;36m      ~ Stable - 1.5 ~   \e[00;37m"
+echo -e "\e[01;36m      ~ Stable - 1.6 ~   \e[00;37m"
 echo $divider
 sleep 1
 echo ""
 echo -e "\e[01;36m *** By Asiier & Senthil360 *** \e[00;37m"
 echo ""
+if ! [ -e "/storage/emulated/0/AKT/AKT" ]; then
+mkdir /storage/emulated/0/AKT && touch /storage/emulated/0/AKT/AKT && touch /storage/emulated/0/AKT/Profile
+fi
 sleep 1
 clear
 function BatteryOP3
@@ -45,15 +48,15 @@ case $option in
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PZ_battery > temp && mv temp /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/PZ_battery > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PZ_battery > temp && mv temp /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/PZ_battery > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PZ_battery > temp && mv temp /storage/emulated/0/AKT/AKT
+grep -v "sleep" ./system/etc/AKT/PZ_battery > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/PZ_battery
 clear
@@ -68,11 +71,11 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/NLB_battery > temp && mv temp /system/su.d/99AKT
+grep -v "sleep" ../system/etc/AKT/NLB_battery > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/NLB_battery > temp && mv temp /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/NLB_battery > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/NLB_battery
@@ -87,11 +90,11 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/FairPark > temp && mv temp /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/FairPark > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/FairPark > temp && mv temp /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/FairPark > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/FairPark
@@ -106,11 +109,11 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/FusionC > temp && mv temp /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/FusionC > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/FusionC > temp && mv temp /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/FusionC > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/FusionP
@@ -125,11 +128,11 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PX_battery > temp && mv temp /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/PX_battery > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PX_battery > temp && mv temp /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/PX_battery > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/PX_battery
@@ -144,11 +147,11 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PX_battery_extreme > temp && mv temp /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/PX_battery_extreme > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PX_battery_extreme > temp && mv temp /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/PX_battery_extreme > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/PX_battery_extreme
@@ -200,11 +203,11 @@ case $option in
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PZ_batteryT > temp && mv temp /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/PZ_batteryT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PZ_batteryT > temp && mv temp /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/PZ_batteryT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/PZ_batteryT
@@ -220,11 +223,11 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/NLB_batteryT > temp && mv temp /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/NLB_batteryT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/NLB_batteryT > temp && mv temp /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/NLB_batteryT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/NLB_batteryT
@@ -239,11 +242,11 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/FairParkT > temp && mv temp /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/FairParkT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/FairParkT > temp && mv temp /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/FairParkT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/FairParkT
@@ -258,11 +261,11 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/FusionCT > temp && mv temp /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/FusionCT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/FusionCT > temp && mv temp /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/FusionCT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/FusionCT
@@ -277,11 +280,11 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PX_batteryT > temp && mv temp /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/PX_batteryT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PX_batteryT > temp && mv temp /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/PX_batteryT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/PX_batteryT
@@ -296,11 +299,11 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PX_battery_extremeT > temp && mv temp /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/PX_battery_extremeT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/PX_battery_extremeT > temp && mv temp /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/PX_battery_extremeT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/PX_battery_extremeT
@@ -333,7 +336,7 @@ echo -e "\e[01;93m   | \e[00;37m"
 echo -e "\e[01;92m DOWN  More Battery / Less Performance \e[00;37m"
 echo ""
 sleep 1.5
-echo -e "\e[01;91m 1.) Burnout PR4 by @Mostafa Wael \e[00;37m"
+echo -e "\e[01;91m 1.) Burnout PR5 by @Mostafa Wael \e[00;37m"
 echo -e "\e[01;91m 2.) Burnout PR3 by @Mostafa Wael \e[00;37m"
 echo -e "\e[01;33m 3.) Nameless Perfomance by @Senthil360 \e[00;37m"
 echo -e "\e[01;92m 4.) Fusion Performance by @Patalao \e[00;37m"
@@ -350,11 +353,11 @@ case $option in
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/BEF > temp && mv temp /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/BEF > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/BEF > temp && mv temp /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/BEF > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/BEF
@@ -369,11 +372,11 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/BPN > temp && mv temp /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/BPN > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" ./system/etc/AKT/BPN > temp && mv temp /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/BPN > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 clear
@@ -387,11 +390,11 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/NLB_performance > /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/NLB_performance > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-cat /system/etc/AKT/NLB_performance > /system/etc/init.d/99AKT
+grep -v "sleep" /system/etc/AKT/NLB_performance > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/NLB_performance
@@ -406,11 +409,11 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/FusionP > /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/FusionP > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-cat /system/etc/AKT/FusionP > /system/etc/init.d/99AKT
+grep -v "sleep" /system/etc/AKT/FusionP > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/FusionP
@@ -442,7 +445,7 @@ echo -e "\e[01;93m   | \e[00;37m"
 echo -e "\e[01;92m DOWN  More Battery / Less Performance \e[00;37m"
 echo ""
 sleep 1.5
-echo -e "\e[01;91m 1.) Burnout PR4 by @Mostafa Wael \e[00;37m"
+echo -e "\e[01;91m 1.) Burnout PR5 by @Mostafa Wael \e[00;37m"
 echo -e "\e[01;33m 2.) Nameless Perfomance by @Senthil360 \e[00;37m"
 echo -e "\e[01;92m 3.) Fusion Performance by @Patalao \e[00;37m"
 echo -e "\e[01;90m 4.) Additional tweaks... \e[00;37m"
@@ -458,11 +461,11 @@ case $option in
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/BEFT > /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/BEFT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-cat /system/etc/AKT/BEFT > /system/etc/init.d/99AKT
+grep -v "sleep" /system/etc/AKT/BEFT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/BEFT
@@ -495,11 +498,11 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/NLB_performanceT > /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/NLB_performanceT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-cat /system/etc/AKT/NLB_performanceT > /system/etc/init.d/99AKT
+grep -v "sleep" /system/etc/AKT/NLB_performanceT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/NLB_performanceT

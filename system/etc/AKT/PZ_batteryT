@@ -18,7 +18,7 @@ echo Author: Asiier
 echo Settings By: Asiier
 echo "Device: One Plus 3T & SD821 Devices"
 echo Codename: 'Project Zhana (BT)'
-echo Build Status: BETA
+echo Build Status: Stable
 echo Last Updated: 15/02/2017
 echo For more information go to the XDA theard
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -58,7 +58,7 @@ if test $maxfreq -eq 1593600; then
     echo 1593600 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq     #Core 0 Maximum Frequency = 1593MHz         
     chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
-    echo 70 460800:70 537600:75 748800:82 902400:86 1056000:99 1286400:99 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 
+    echo 70 460800:65 537600:75 748800:82 902400:86 1056000:1 1286400:99 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 
     chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
 elif test $maxfreq -eq 1728000; then
     #Temporarily change permissions to governor files for the Little cluster to set the maximum frequency to 1728MHz
@@ -68,7 +68,7 @@ elif test $maxfreq -eq 1728000; then
     echo 1728000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq     #Core 0 Maximum Frequency = 1728MHz         
     chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
-    echo 70 460800:70 537600:75 748800:82 902400:86 1056000:99 1286400:99 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 
+    echo 70 460800:65 537600:75 748800:82 902400:86 1056000:1 1286400:99 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 
     chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
     maxfreq=$(cat "/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq")
 fi
@@ -83,7 +83,7 @@ if test $maxfreq -lt 1593600; then
     #echo 1593600 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq     #Core 0 Maximum Frequency = 1593MHz         
     #chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
-    echo 70 460800:70 537600:75 748800:82 902400:86 1056000:99 1286400:99 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 
+    echo 70 460800:65 537600:75 748800:82 902400:86 1056000:1 1286400:99 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 
     chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
 elif test $maxfreq -gt 1728000; then
     #Temporarily change permissions to governor files for the Little cluster to set the maximum frequency to 1728MHz
@@ -96,7 +96,7 @@ elif test $maxfreq -gt 1728000; then
     #echo 1728000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq     #Core 0 Maximum Frequency = 1728MHz         
     #chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
-    echo 70 460800:70 537600:75 748800:82 902400:86 1056000:99 1286400:99 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 
+    echo 70 460800:65 537600:75 748800:82 902400:86 1056000:1 1286400:99 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 
     chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
 fi
 chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/*
