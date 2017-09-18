@@ -1,6 +1,6 @@
 #!/system/bin/sh
 #This script is licensed under GPLV2
-#Interactive Governor tweaks for OnePlus 3.
+#Interactive Governor tweaks for OnePlus 3T.
 #Fusion profiles are set for a balanced and performance use.
 #FusionB, FusionP and Stock settings are present in this script.
 #FusionB is tweaked in a way that Cluster 1 (small) uses mostly the frequencies from 307 to 1324 and when needed, Cluster 2(big) enters to help, using frequencies up to 1632 and jumping above that when extreme load is present.
