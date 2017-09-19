@@ -95,7 +95,7 @@ echo interactive > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
 chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
 #Grab Maximum Achievable Frequency for the Big Cluster
 maxfreq=$(cat "/sys/devices/system/cpu/cpu2/cpufreq/cpuinfo_max_freq")                
-if test $maxfreq -eq 2150400; then
+if test "$maxfreq" -eq 2150400; then
     #Temporarily change permissions to governor files for the Big cluster to set the maximum frequency to 2150MHz
     echo No BIG Cluster Overclocking detected. 
     echo Applying appropriate values.
@@ -106,7 +106,7 @@ if test $maxfreq -eq 2150400; then
     echo 85 1500000:90 1800000:70 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
 chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
 #Set overclock max frequency compatible target_loads
-elif test $maxfreq -eq 2265600; then
+elif test "$maxfreq" -eq 2265600; then
     #Temporarily change permissions to governor files for the Big cluster to set the maximum frequency to 2265MHz
     echo BIG Cluster Overclocking detected. 
     echo Applying appropriate values.

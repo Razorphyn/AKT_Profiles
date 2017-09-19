@@ -18,8 +18,8 @@ echo Author: Asiier
 echo Settings By: Asiier
 echo "Device: One Plus 3 & SD820 Devices"
 echo Codename: 'Project X.A.N.A (BT)'
-echo Build Status: BETA
-echo Last Updated: 15/02/2017
+echo Build Status: Stable
+echo Last Updated: 19/09/2017
 echo For more information go to the XDA theard
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sleep 0.3
@@ -50,7 +50,7 @@ echo interactive > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 #Grab Maximum Achievable Frequency for the LITTLE Cluster
 maxfreq=$(cat "/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq")                
-if test $maxfreq -eq 1593600; then
+if test "$maxfreq" -eq 1593600; then
     #Temporarily change permissions to governor files for the Big cluster to set the maximum frequency to 1593MHz
     echo No LITTLE Cluster Overclocking detected. 
     echo Applying appropriate values.
@@ -60,7 +60,7 @@ if test $maxfreq -eq 1593600; then
     chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
     echo 71 480000:70 556800:77 652800:79 729600:83 844800:87 960000:92 1036800:2 1228800:99 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 
     chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
-elif test $maxfreq -eq 1728000; then
+elif test "$maxfreq" -eq 1728000; then
     #Temporarily change permissions to governor files for the Little cluster to set the maximum frequency to 1728MHz
     echo LITTLE Cluster Overclocking detected. 
     echo Applying appropriate values.
@@ -72,7 +72,7 @@ elif test $maxfreq -eq 1728000; then
     chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
     maxfreq=$(cat "/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq")
 fi
-if test $maxfreq -lt 1593600; then
+if test "$maxfreq" -lt 1593600; then
     #Temporarily change permissions to governor files for the Big cluster to set the maximum frequency to 1593MHz
     echo LITTLE Cluster Underclocking detected!!
     sleep 1
@@ -85,7 +85,7 @@ if test $maxfreq -lt 1593600; then
     chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
     echo 71 480000:70 556800:77 652800:79 729600:83 844800:87 960000:92 1036800:2 1228800:99 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 
     chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
-elif test $maxfreq -gt 1728000; then
+elif test "$maxfreq" -gt 1728000; then
     #Temporarily change permissions to governor files for the Little cluster to set the maximum frequency to 1728MHz
     echo LITTLE Cluster Overclocking detected. 
     sleep 1
@@ -129,7 +129,7 @@ echo interactive > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
 chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
 #Grab Maximum Achievable Frequency for the Big Cluster
 maxfreq=$(cat "/sys/devices/system/cpu/cpu2/cpufreq/cpuinfo_max_freq")                
-if test $maxfreq -eq 2150400; then
+if test "$maxfreq" -eq 2150400; then
     #Temporarily change permissions to governor files for the Big cluster to set the maximum frequency to 2150MHz
     echo No BIG Cluster Overclocking detected. 
     echo Applying appropriate values.
@@ -140,7 +140,7 @@ if test $maxfreq -eq 2150400; then
     echo 65 729600:75 844800:87 940800:80 1036800:99 1401600:97 1824000:99 > /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads 
 chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads
 #Set overclock max frequency compatible target_loads
-elif test $maxfreq -eq 2265600; then
+elif test "$maxfreq" -eq 2265600; then
     #Temporarily change permissions to governor files for the Big cluster to set the maximum frequency to 2265MHz
     echo BIG Cluster Overclocking detected. 
     echo Applying appropriate values.

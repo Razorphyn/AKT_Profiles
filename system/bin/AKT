@@ -16,7 +16,7 @@ echo ""
 echo -e "\e[01;36m *** By Asiier & Senthil360 *** \e[00;37m"
 echo ""
 if ! [ -e "/storage/emulated/0/AKT/AKT" ]; then
-mkdir /storage/emulated/0/AKT && touch /storage/emulated/0/AKT/AKT && touch /storage/emulated/0/AKT/Profile
+mkdir /storage/emulated/0/AKT && touch /storage/emulated/0/AKT/AKT
 fi
 sleep 1
 clear
@@ -461,12 +461,15 @@ case $option in
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/BEFT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/BEFT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/BEFT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/BEFT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/BEFT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/BEFT
 clear
@@ -498,12 +501,15 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/NLB_performanceT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/NLB_performanceT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/NLB_performanceT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/NLB_performanceT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/NLB_performanceT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/NLB_performanceT
 clear
@@ -517,12 +523,15 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/FusionPT > /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/FusionPT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-cat /system/etc/AKT/FusionPT > /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/FusionPT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/FusionPT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/FusionPT
 clear
@@ -573,12 +582,15 @@ case $option in
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/FusionR > /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/FusionR > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-cat /system/etc/AKT/FusionR > /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/FusionR > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/FusionR > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/FusionR
 clear
@@ -592,12 +604,15 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/GhostPepper > /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/GhostPepper > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-cat /system/etc/AKT/GhostPepper > /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/GhostPepper > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/GhostPepper > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/GhostPepper
 clear
@@ -611,12 +626,15 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/FusionB > /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/FusionB > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-cat /system/etc/AKT/FusionB > /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/FusionB > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/FusionB > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/FusionB
 clear
@@ -630,12 +648,15 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/NLB_balanced > /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/NLB_balanced > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-cat /system/etc/AKT/NLB_balanced > /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/NLB_balanced > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/NLB_balanced > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/NLB_balanced
 clear
@@ -649,12 +670,15 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/HawkPepper > /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/HawkPepper > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-cat /system/etc/AKT/HawkPepper > /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/HawkPepper > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/HawkPepper > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/HawkPepper
 clear
@@ -668,12 +692,15 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/PZ_balanced > /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/PZ_balanced > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-cat /system/etc/AKT/PZ_balanced > /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/PZ_balanced > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/PZ_balanced > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/PZ_balanced
 clear
@@ -687,12 +714,15 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/PZ_balanced > /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/PX_balanced > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-cat /system/etc/AKT/PX_balanced > /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/PX_balanced > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/PX_balanced > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/PX_balanced
 clear
@@ -723,14 +753,15 @@ echo -e "\e[01;93m   | \e[00;37m"
 echo -e "\e[01;92m DOWN  More Battery / Less Performance \e[00;37m"
 echo ""
 sleep 1.5
-echo -e "\e[02;91m 1.) GhostPepper by @Asiier \e[00;37m"
-echo -e "\e[01;31m 2.) Fusion Balanced by @Patalao \e[00;37m"
-echo -e "\e[02;33m 3.) Nameless Balanced by @Senthil360 \e[00;37m"
-echo -e "\e[01;93m 4.) HawkPepper by @Asiier \e[00;37m"
-echo -e "\e[01;92m 5.) Project by Zhana Balanced by @Asiier \e[00;37m"
-echo -e "\e[01;92m 6.) Project by X.A.N.A Balanced by @Asiier \e[00;37m"
-echo -e "\e[01;90m 7.) Additional tweaks... \e[00;37m"
-echo -e "\e[01;94m 8.) Main menu \e[00;37m"
+echo -e "\e[02;91m 1.) Fusion Reborn by @Patalao \e[00;37m"
+echo -e "\e[02;91m 2.) GhostPepper by @Asiier \e[00;37m"
+echo -e "\e[01;31m 3.) Fusion Balanced by @Patalao \e[00;37m"
+echo -e "\e[02;33m 4.) Nameless Balanced by @Senthil360 \e[00;37m"
+echo -e "\e[01;93m 5.) HawkPepper by @Asiier \e[00;37m"
+echo -e "\e[01;92m 6.) Project by Zhana Balanced by @Asiier \e[00;37m"
+echo -e "\e[01;92m 7.) Project by X.A.N.A Balanced by @Asiier \e[00;37m"
+echo -e "\e[01;90m 8.) Additional tweaks... \e[00;37m"
+echo -e "\e[01;94m 9.) Main menu \e[00;37m"
 echo ""
 echo $divider
 echo ""
@@ -738,16 +769,41 @@ echo -n "Please select a profile:"
 read option
 echo ""
 case $option in
-1 ) #GhostPepper
+1 ) #FusionR
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/GhostPepperT > /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/FusionR > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-cat /system/etc/AKT/GhostPepperT > /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/FusionR > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/FusionR > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/FusionR
+clear
+sh /system/etc/AKT/FusionR
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+2 ) #GhostPepper
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/GhostPepperT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/GhostPepperT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/GhostPepperT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/GhostPepperT
 clear
@@ -757,16 +813,19 @@ echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 5; main_menu_op3t;
 exit;;
-2 ) #Fusion Balanced
+3 ) #Fusion Balanced
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/FusionBT > /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/FusionBT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-cat /system/etc/AKT/FusionBT > /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/FusionBT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/FusionBT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/FusionBT
 clear
@@ -776,16 +835,19 @@ echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 5; main_menu_op3t;
 exit;;
-3 ) #Nameless Balanced 
+4 ) #Nameless Balanced 
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/NLB_balancedT > /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/NLB_balancedT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-cat /system/etc/AKT/NLB_balancedT > /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/NLB_balancedT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/NLB_balancedT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/NLB_balancedT
 clear
@@ -795,16 +857,19 @@ echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 5; main_menu_op3t;
 exit;;
-4 ) #HawkPepper 
+5 ) #HawkPepper 
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/HawkPepperT > /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/HawkPepperT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-cat /system/etc/AKT/HawkPepperT > /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/HawkPepperT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/HawkPepperT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/HawkPepperT
 clear
@@ -814,16 +879,19 @@ echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 5; main_menu_op3t;
 exit;;
-5 ) #Project Zhana Balanced
+6 ) #Project Zhana Balanced
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/PZ_balancedT > /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/PZ_balancedT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-cat /system/etc/AKT/PZ_balancedT > /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/PZ_balancedT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/PZ_balancedT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/PZ_balancedT
 clear
@@ -833,16 +901,19 @@ echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 5; main_menu_op3t;
 exit;;
-6 ) #Project XANA Balanced
+7 ) #Project XANA Balanced
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/PZ_balancedT > /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/PX_balancedT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-cat /system/etc/AKT/PX_balancedT > /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/PX_balancedT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/PX_balancedT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/PX_balancedT
 clear
@@ -852,11 +923,11 @@ echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 5; main_menu_op3t;
 exit;;
-7 ) echo "Coming soon"
+8 ) echo "Coming soon"
 echo " You tell me what to add here"
 sleep 2; main_menu_op3t;
 exit;;
-8 ) clear; main_menu_op3t;;
+9 ) clear; main_menu_op3t;;
 * ) echo " Please, enter a valid option..."
 sleep 2
 clear;;
@@ -887,12 +958,15 @@ case $option in
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/BEF > /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/BEF > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-cat /system/etc/AKT/BEF > /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/BEF > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/BEF > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/BEF
 clear
@@ -904,15 +978,33 @@ sleep 5; main_menu_op3;
 exit;;
 2 ) #Burnout PR3.5 
 $BB mount -o remount,rw /system 2>/dev/null
-mount -o remount,rw /system 2>/dev/null
-if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/BPN > /system/su.d/99AKT
+mount -o remount,rw /system 2>/dev/nullif [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/PZ_battery > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-cat /system/etc/AKT/BPN > /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/PZ_battery > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/PZ_battery > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/PZ_battery
+clear
+sh /system/etc/AKT/PZ_battery
+clear
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/BPN > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/BPN > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/BPN > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/BPN
 clear
 sh /system/etc/AKT/BPN
 clear
@@ -924,12 +1016,15 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/NLB_performance > /system/su.d/99AKT
+grep -v "sleep" ./system/etc/AKT/NLB_performance > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-cat /system/etc/AKT/NLB_performance > /system/etc/init.d/99AKT
+grep -v "sleep" ./system/etc/AKT/NLB_performance > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/NLB_performance > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/NLB_performance
 clear
@@ -957,6 +1052,7 @@ rm -rf /system/etc/init.d/99AKT
 rm -rf /system/etc/AKT
 rm -rf /system/bin/AKT
 rm -rf /system/bin/ATT
+rm -rf /storage/emulated/0/AKT
 echo -e "\e[01;31m Permission resetted... \e[00;37m"
 echo -e "\e[01;31m Files removed from /sytem ... \e[00;37m"
 echo -e "\e[01;31m Please, reboot the device for fully removing the tweaks... \e[00;37m"
@@ -973,6 +1069,7 @@ $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 cat /system/etc/AKT/DisableInitd > /system/etc/init.d/99AKT
 cat /system/etc/AKT/DisableInitd > /system/su.d/99AKT
+cat /system/etc/AKT/DisableInitd > /storage/emulated/0/AKT
 chmod 644 /system/etc/init.d/99AKT
 chmod 644 /system/su.d/99AKT
 echo -e "\e[01;31m Permission resetted... \e[00;37m"
@@ -1117,12 +1214,12 @@ fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
 chmod 777 /system/etc/init.d/99AKT
 fi
-if [ -e "/system/etc/init.d/99AKT" ]; then
-sh /system/etc/init.d/99AKT
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+sh /storage/emulated/0/AKT/AKT
 clear
 else 
-if [ -e "/system/su.d/99AKT" ]; then
-sh /system/su.d/99AKT
+if [ -e "/system/etc/init.d/99AKT" ]; then
+sh /system/etc/init.d/99AKT
 clear
 else
 echo -e "\e[01;31m Files not found or empty, check If the installation was succeful or try to Apply the profile at least onces \e[00;37m"

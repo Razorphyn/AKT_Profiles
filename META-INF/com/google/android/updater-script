@@ -13,7 +13,7 @@ ui_print("=          by Asiier & Senthil360          =");
 ui_print("=                                          =");
 ui_print("============================================");
 ui_print("                                            ");
-ui_print(" ~~~~~ Current verison:  -BETA-  1.6 ~~~~~  "); 
+ui_print(" ~~~~~ Current verison:  -FINAL- 1.6 ~~~~~  "); 
 ui_print("                                            ");
 
 run_program("/sbin/busybox", "mount", "/system");
@@ -60,9 +60,8 @@ set_perm(0, 0, 0777, "/system/etc/AKT/FusionR");
 set_perm(0, 0, 0777, "/system/etc/AKT/Stock");
 set_perm(0, 0, 0777, "/system/etc/AKT/busybox");
 set_perm(0, 0, 0777, "/system/etc/AKT/Hotplug");
+set_perm(0, 0, 0777, "/system/etc/AKT/Temp");
 set_perm(0, 0, 0777, "/system/etc/AKT/DisableHotplug");
-mkdir -p /storage/0/emulated/AKT
-cp -Rf /system/su.d/99AKT /storage/emulated/0/AKT
 run_program("/sbin/busybox", "unmount", "/system");
 ui_print(" ");
 ui_print("           Open your Terminal app");
