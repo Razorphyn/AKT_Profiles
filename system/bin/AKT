@@ -978,7 +978,8 @@ sleep 5; main_menu_op3;
 exit;;
 2 ) #Burnout PR3.5 
 $BB mount -o remount,rw /system 2>/dev/null
-mount -o remount,rw /system 2>/dev/nullif [ -e "/system/su.d/99AKT" ]; then
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
 grep -v "sleep" ./system/etc/AKT/PZ_battery > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
