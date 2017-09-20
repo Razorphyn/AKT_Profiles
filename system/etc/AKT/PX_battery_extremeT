@@ -33,8 +33,7 @@ if grep -q 'ro.build.version.sdk=25' /system/build.prop; then
 	echo Android Nougat 7.1.X detected!
 	sleep 0.3
 	echo N detected... Applying proper settings
-fi
-if grep -q 'ro.build.version.sdk=24' /system/build.prop; then
+elif grep -q 'ro.build.version.sdk=24' /system/build.prop; then
 	echo Android Nougat 7.0.X detected!
 	sleep 0.3
 	echo N detected... Applying proper settings

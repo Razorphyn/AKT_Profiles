@@ -60,7 +60,8 @@ if test "$maxfreq" -eq 1593600; then
     chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
     echo 70 480000:65 556800:75 729600:82 960000:86 1036800:2 1228800:99 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 
     chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
-elif test "$maxfreq" -eq 1728000; then
+fi
+if test "$maxfreq" -eq 1728000; then
     #Temporarily change permissions to governor files for the Little cluster to set the maximum frequency to 1728MHz
     echo LITTLE Cluster Overclocking detected. 
     echo Applying appropriate values.
