@@ -80,6 +80,9 @@ chmod 777 /system/etc/init.d/99AKT
 fi
 chmod 777 /system/etc/AKT/NLB_battery
 clear
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/NLB_battery > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
 sh /system/etc/AKT/NLB_battery
 clear
 echo " Installation finished... "
@@ -96,6 +99,9 @@ fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
 grep -v "sleep" ./system/etc/AKT/FairPark > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/FairPark > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/FairPark
 clear
@@ -116,6 +122,9 @@ if [ -e "/system/etc/init.d/99AKT" ]; then
 grep -v "sleep" ./system/etc/AKT/FusionC > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/FusionP > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
 chmod 777 /system/etc/AKT/FusionP
 clear
 sh /system/etc/AKT/FusionC
@@ -135,6 +144,9 @@ if [ -e "/system/etc/init.d/99AKT" ]; then
 grep -v "sleep" ./system/etc/AKT/PX_battery > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/PX_battery > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
 chmod 777 /system/etc/AKT/PX_battery
 clear
 sh /system/etc/AKT/PX_battery
@@ -153,6 +165,9 @@ fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
 grep -v "sleep" ./system/etc/AKT/PX_battery_extreme > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/PX_battery_extreme > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/PX_battery_extreme
 clear
@@ -210,6 +225,9 @@ if [ -e "/system/etc/init.d/99AKT" ]; then
 grep -v "sleep" ./system/etc/AKT/PZ_batteryT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/PZ_batteryT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
 chmod 777 /system/etc/AKT/PZ_batteryT
 clear
 sh /system/etc/AKT/PZ_batteryT
@@ -230,6 +248,9 @@ if [ -e "/system/etc/init.d/99AKT" ]; then
 grep -v "sleep" ./system/etc/AKT/NLB_batteryT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/NLB_batteryT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
 chmod 777 /system/etc/AKT/NLB_batteryT
 clear
 sh /system/etc/AKT/NLB_batteryT
@@ -248,6 +269,9 @@ fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
 grep -v "sleep" ./system/etc/AKT/FairParkT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/FairParkT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/FairParkT
 clear
@@ -268,6 +292,9 @@ if [ -e "/system/etc/init.d/99AKT" ]; then
 grep -v "sleep" ./system/etc/AKT/FusionCT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/FusionCT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
 chmod 777 /system/etc/AKT/FusionCT
 clear
 sh /system/etc/AKT/FusionCT
@@ -287,6 +314,9 @@ if [ -e "/system/etc/init.d/99AKT" ]; then
 grep -v "sleep" ./system/etc/AKT/PX_batteryT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/PX_batteryT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
 chmod 777 /system/etc/AKT/PX_batteryT
 clear
 sh /system/etc/AKT/PX_batteryT
@@ -305,6 +335,9 @@ fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
 grep -v "sleep" ./system/etc/AKT/PX_battery_extremeT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/PX_battery_extremeT > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/PX_battery_extremeT
 clear
@@ -360,6 +393,9 @@ if [ -e "/system/etc/init.d/99AKT" ]; then
 grep -v "sleep" ./system/etc/AKT/BEF > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/BEF > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
 chmod 777 /system/etc/AKT/BEF
 clear
 sh /system/etc/AKT/BEF
@@ -379,6 +415,9 @@ if [ -e "/system/etc/init.d/99AKT" ]; then
 grep -v "sleep" ./system/etc/AKT/BPN > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/BPN > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
 clear
 sh /system/etc/AKT/BPN
 clear
@@ -396,6 +435,9 @@ fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
 grep -v "sleep" /system/etc/AKT/NLB_performance > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/NLB_performance > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/NLB_performance
 clear
@@ -415,6 +457,9 @@ fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
 grep -v "sleep" /system/etc/AKT/FusionP > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/FusionP > ./system/etc/AKT/Temp && mv ./system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
 fi
 chmod 777 /system/etc/AKT/FusionP
 clear
@@ -1052,8 +1097,12 @@ rm -rf /system/su.d/99AKT
 rm -rf /system/etc/init.d/99AKT
 rm -rf /system/etc/AKT
 rm -rf /system/bin/AKT
+rm -rf /system/bin/AKT3
 rm -rf /system/bin/ATT
 rm -rf /storage/emulated/0/AKT
+if [ -e /data/system/current_profile ]; then
+  rm -rf /data/system/current_profile
+fi
 echo -e "\e[01;31m Permission resetted... \e[00;37m"
 echo -e "\e[01;31m Files removed from /sytem ... \e[00;37m"
 echo -e "\e[01;31m Please, reboot the device for fully removing the tweaks... \e[00;37m"
@@ -1071,6 +1120,9 @@ mount -o remount,rw /system 2>/dev/null
 cat /system/etc/AKT/DisableInitd > /system/etc/init.d/99AKT
 cat /system/etc/AKT/DisableInitd > /system/su.d/99AKT
 cat /system/etc/AKT/DisableInitd > /storage/emulated/0/AKT
+if [ -e /data/system/current_profile ]; then
+   echo *None* | tee /data/system/current_profile
+fi
 chmod 644 /system/etc/init.d/99AKT
 chmod 644 /system/su.d/99AKT
 echo -e "\e[01;31m Permission resetted... \e[00;37m"
