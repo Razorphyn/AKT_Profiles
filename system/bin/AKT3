@@ -109,7 +109,7 @@ if [ -e "/system/etc/init.d/99AKT" ]; then
 cat /system/etc/AKT/FusionC > /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
-chmod 777 /system/etc/AKT/FusionP
+chmod 777 /system/etc/AKT/FusionC
 clear
 sh /system/etc/AKT/FusionC
 clear
@@ -371,6 +371,7 @@ if [ -e "/system/etc/init.d/99AKT" ]; then
 cat /system/etc/AKT/BPN > /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
+chmod 777 /system/etc/AKT/BPN
 clear
 sh /system/etc/AKT/BPN
 clear
@@ -679,7 +680,7 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/PZ_balanced > /system/su.d/99AKT
+cat /system/etc/AKT/PX_balanced > /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
@@ -829,7 +830,7 @@ exit;;
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
-cat /system/etc/AKT/PZ_balancedT > /system/su.d/99AKT
+cat /system/etc/AKT/PX_balancedT > /system/su.d/99AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
@@ -905,6 +906,7 @@ if [ -e "/system/etc/init.d/99AKT" ]; then
 cat /system/etc/AKT/BPN > /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
+chmod 777 /system/etc/AKT/BPN
 clear
 sh /system/etc/AKT/BPN
 clear
